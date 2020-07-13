@@ -1,0 +1,103 @@
+﻿
+@{
+    ViewBag.Title = "Danh sách hàng tồn kho";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="content-wrapper" style="min-height: 1200.88px;">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+        <div class="container-fluid">
+            <div class="row mb-2">
+                <div class="col-sm-6">
+                    <h1>Hàng Tồn Kho</h1>
+                </div>
+                <div class="col-sm-6">
+                    <ol class="breadcrumb float-sm-right">
+                        @*<li class="breadcrumb-item"><a href="#">Home</a></li>
+                            <li class="breadcrumb-item active">DataTables</li>*@
+                    </ol>
+                </div>
+            </div>
+        </div><!-- /.container-fluid -->
+    </section>
+    <!-- Main content -->
+    <section class="content">
+        <div class="row">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-header">
+                        <div class="col-2 @ViewBag.Add">
+                            <h3 class="card-title"><i class="fas fa-plus"></i> Danh sách</h3>
+                        </div>
+                    </div>
+                    <!-- /.card-header -->
+                    <div class="card-body">
+                        <table id="example1" class="table table-bordered table-striped">
+                            <thead>
+                                <tr>
+                                    <th>
+                                        Tên Sản phẩm
+                                    </th>
+                                    <th>
+                                        Số lượng nhập
+                                    </th>
+                                    <th>
+                                        Số lượng xuất
+                                    </th>
+                                    <th>
+                                        Số lượng còn lại
+                                    </th>
+                                    
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var item in Model)
+                                {
+                                    <tr>
+                                        <td>
+                                            <a href="#" onclick="return false;" data-toggle="popover" title="" data-content="<a href='/TimKiems/DetailsTonKho/DHN_@item.MaSP'>Đơn Hàng Nhập</a></br><a href='/TimKiems/DetailsTonKho/DHX_@item.MaSP'>Đơn Hàng Xuất</a>">@item.TenSP</a>
+                                        </td>
+                                        <td>
+                                            @item.SLN
+                                        </td>
+                                        <td>
+                                            @item.SLX
+                                        </td>
+
+                                        <td>
+                                            @item.SoLuongConLai
+                                        </td>
+                                    </tr>
+                                }
+
+                            </tbody>
+                            <tfoot>
+                                <tr>
+                                    <th>
+                                        Mã sản phẩm
+                                    </th>
+                                    <th>
+                                        Số lượng nhập
+                                    </th>
+                                    <th>
+                                        Số lượng xuất
+                                    </th>
+                                    <th>
+                                        Số lượng còn lại
+                                    </th>
+                                </tr>
+                            </tfoot>
+                        </table>
+                    </div>
+                    <!-- /.card-body -->
+                </div>
+                <!-- /.card -->
+            </div>
+            <!-- /.col -->
+        </div>
+        <!-- /.row -->
+    </section>
+    <!-- /.content -->
+    <!-- /.content -->
+</div>

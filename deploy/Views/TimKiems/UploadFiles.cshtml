@@ -1,0 +1,63 @@
+﻿@{
+    ViewBag.Title = "Upload File";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="content-wrapper" style="min-height: 1200.88px;">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+        <div class="container-fluid">
+            <div class="row mb-2">
+                <div class="col-sm-6">
+                    <h1>UpLoad File</h1>
+                </div>
+                <div class="col-sm-6">
+                    <ol class="breadcrumb float-sm-right">
+                        @*<li class="breadcrumb-item"><a href="#">Home</a></li>
+                            <li class="breadcrumb-item active">DataTables</li>*@
+                    </ol>
+                </div>
+            </div>
+        </div><!-- /.container-fluid -->
+    </section>
+    <!-- Main content -->
+    <section class="content">
+        <div class="row">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-header">
+                        <h3 class="card-title">Thông Tin</h3>
+                        <h3>@ViewBag.Message</h3>
+                    </div>
+                    <!-- /.card-header -->
+                    <div class="card-body">
+                        @*<form action="" method="post" enctype="multipart/form-data">
+
+                            <label for="file">Filename:</label>
+                            <input type="file" name="file" id="file" />
+
+                            <input type="submit" />
+                        </form>*@
+                        <form action="/TimKiems/UploadFiles" enctype="multipart/form-data" method="post">
+                            <div class="form-group">
+                                <label for="exampleInputFile">File input</label>
+                                <div class="input-group">
+                                    <div class="custom-file">
+                                        <input type="file" name="fileUp" id="fileUp" />
+                                    </div>
+                                </div>
+                            </div>
+                            <input type="submit" value="Upload" />
+                        </form>
+                    </div>
+                    <!-- /.card-body -->
+                </div>
+                <!-- /.card -->
+            </div>
+            <!-- /.col -->
+        </div>
+        <!-- /.row -->
+    </section>
+    <!-- /.content -->
+    <!-- /.content -->
+</div>

@@ -1,0 +1,133 @@
+﻿@model QuanLyNongSan.Models.DONHANGXUAT
+
+@{
+    ViewBag.Title = "Thêm mới - Đơn hàng xuất";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    List<QuanLyNongSan.Models.DAILY> ListDaiLy = ViewBag.ListDaiLy as List<QuanLyNongSan.Models.DAILY>;
+    List<QuanLyNongSan.Models.NHANVIEN> ListNhanVien = ViewBag.NhanVien as List<QuanLyNongSan.Models.NHANVIEN>;
+    List<QuanLyNongSan.Models.SANPHAM> ListSP = ViewBag.ListSP as List<QuanLyNongSan.Models.SANPHAM>;
+    List<QuanLyNongSan.Models.TRAM> ListTram = ViewBag.Tram as List<QuanLyNongSan.Models.TRAM>;
+}
+
+<div class="content-wrapper" style="min-height: 1200.88px;">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+        <div class="container-fluid">
+            <div class="row mb-2">
+                <div class="col-sm-6">
+                    <h1>Đơn Hàng Xuất</h1>
+                </div>
+                <div class="col-sm-6">
+                    <ol class="breadcrumb float-sm-right">
+                        @*<li class="breadcrumb-item"><a href="#">Home</a></li>
+                            <li class="breadcrumb-item active">DataTables</li>*@
+                    </ol>
+                </div>
+            </div>
+        </div><!-- /.container-fluid -->
+    </section>
+    <!-- Main content -->
+    <section class="content">
+        <div class="row">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-header">
+                        <div class="col-2">
+                            <a href="/DonHangXuats/Create" class="btn btn-block btn-success"><i class="fas fa-plus"></i> Thêm mới</a>
+                        </div>
+                    </div>
+                    <!-- /.card-header -->
+                    <div class="card-body">
+
+                        @using (Html.BeginForm())
+                        {
+                            @Html.AntiForgeryToken()
+
+                            <div class="form-horizontal">
+                                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                                <div class="form-group">
+                                    @Html.LabelFor(model => model.MaDaiLy, htmlAttributes: new { @class = "control-label col-md-2" })
+                                    <div class="col-md-5">
+                                        <select class="list-box tri-state form-control" id="MaDaiLy" name="MaDaiLy">
+                                            @foreach (var item in ListDaiLy)
+                                            {
+                                                <option value="@item.MaDL">@item.Ten</option>
+                                            }
+                                        </select>
+                                        @Html.ValidationMessageFor(model => model.MaDaiLy, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    @Html.LabelFor(model => model.MaNV, htmlAttributes: new { @class = "control-label col-md-2" })
+                                    <div class="col-md-5">
+                                        <select class="list-box tri-state form-control" id="MaNV" name="MaNV">
+                                            @foreach (var item in ListNhanVien)
+                                            {
+                                                <option value="@item.MaNV">@item.Hoten</option>
+                                            }
+                                        </select>
+                                        @Html.ValidationMessageFor(model => model.MaNV, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="control-label col-md-2">Sản Phẩm</label>
+                                    <div class="col-md-5">
+                                        <select class="select2bs4 list-box tri-state form-control" multiple="multiple" id="MaSP" name="MaSP">
+                                            @foreach (var item in ListSP)
+                                            {
+                                                <option value="@item.MaSP">@item.MaSP<text>_</text>@item.TenSP</option>
+                                            }
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="control-label col-md-2">Trạm</label>
+                                    <div class="col-md-5">
+                                        <select class="form-control" id="Tram" name="Tram">
+                                            @foreach (var item in ListTram)
+                                            {
+                                                <option value="@item.MaTram">@item.TenTram</option>
+                                            }
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="control-label col-md-2">Số Lượng</label>
+                                    <div class="col-md-5">
+                                        <input type="text" class="form-control" min="0" id="SoLuong" name="SoLuong" />
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="control-label col-md-2">Thời Gian</label>
+                                    <div class="col-md-5">
+                                        <input type="text" class="form-control" min="0" id="ThoiGian" name="ThoiGian" />
+
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="control-label col-md-2">Phương Tiện</label>
+                                    <div class="col-md-5">
+                                        <input type="text" class="form-control" id="PhuongTien" name="PhuongTien" />
+
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="col-md-offset-2 col-md-10">
+                                        <input type="submit" value="Lưu" class="btn btn-default" />
+                                    </div>
+                                </div>
+                            </div>
+                        }
+                    </div>
+                    <!-- /.card-body -->
+                </div>
+                <!-- /.card -->
+            </div>
+            <!-- /.col -->
+        </div>
+        <!-- /.row -->
+    </section>
+    <!-- /.content -->
+    <!-- /.content -->
+</div>

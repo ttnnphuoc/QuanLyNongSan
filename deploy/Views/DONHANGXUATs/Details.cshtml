@@ -1,0 +1,101 @@
+﻿@model QuanLyNongSan.Models.DONHANGXUAT
+
+@{
+    ViewBag.Title = "Chi Tiết Đơn Hàng Xuất";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    List<QuanLyNongSan.Models.CHITIETDONHANGXUAT> ChiTietDonHangXuat = ViewBag.ChiTietDonHangXuat as List<QuanLyNongSan.Models.CHITIETDONHANGXUAT>;
+    List<QuanLyNongSan.Models.SANPHAM> ListSanPham = ViewBag.ListSanPham as List<QuanLyNongSan.Models.SANPHAM>;
+    List<QuanLyNongSan.Models.NHACUNGCAP> ListNCC = ViewBag.ListNCC as List<QuanLyNongSan.Models.NHACUNGCAP>;
+    QuanLyNongSan.Models.SANPHAM sanPham = new QuanLyNongSan.Models.SANPHAM();
+}
+
+<div class="content-wrapper" style="min-height: 1200.88px;">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+        <div class="container-fluid">
+            <div class="row mb-2">
+                <div class="col-sm-6">
+                    <h1>Chi Tiết Đơn Hàng Xuất</h1>
+                </div>
+                <div class="col-sm-6">
+                    <ol class="breadcrumb float-sm-right">
+                        @*<li class="breadcrumb-item"><a href="#">Home</a></li>
+                            <li class="breadcrumb-item active">DataTables</li>*@
+                    </ol>
+                </div>
+            </div>
+        </div><!-- /.container-fluid -->
+    </section>
+    <!-- Main content -->
+    <section class="content">
+        <div class="row">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-header">
+                        <h3 class="card-title">Thông Tin</h3>
+                    </div>
+                    <!-- /.card-header -->
+                    <div class="card-body">
+                        <table id="example1" class="table table-striped">
+                            <thead>
+                                <tr>
+                                    <th>Sản Phẩm</th>
+                                    <th>NCC</th>
+                                    <th>Số Lượng</th>
+                                    <th class="@ViewBag.IsAdmin">Hành Động</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var item in ChiTietDonHangXuat)
+                                {
+                                    <tr>
+                                        <td>
+                                            @if (ListSanPham.FirstOrDefault(x => x.MaSP == item.MaSP) != null)
+                                            {
+                                                sanPham = @ListSanPham.FirstOrDefault(x => x.MaSP == item.MaSP);
+                                            }
+                                             @sanPham.TenSP
+                                        </td>
+                                        
+                                        <td>
+                                            @if(ListNCC.FirstOrDefault(x=>x.MaNCC == sanPham.MaNCC) !=null)
+                                            {
+                                                @ListNCC.FirstOrDefault(x => x.MaNCC == sanPham.MaNCC).TenNhaCC
+                                            }
+                                        </td>
+                                        <td>@item.SoLuong</td>
+                                        <td class="@ViewBag.IsAdmin">
+                                            <a href="@Url.Action("Edit", "CHITIETDONHANGXUATs", new { id = item.MaDHX, MaSP = item.MaSP })" title="Sửa">
+                                                <i class="fas fa-pencil-alt"></i>
+                                            </a>|
+                                            <a style="color:red;" href="@Url.Action("Delete", "CHITIETDONHANGXUATs",  new { id = item.MaDHX, MaSP = item.MaSP })" title="Xóa">
+                                                <i class="fas fa-trash-alt"></i>
+                                            </a>
+                                        </td>                         
+                                </tr>
+                                }
+                            </tbody>
+                            <tfoot>
+                                <tr>
+                                    <th>Sản Phẩm</th>
+                                    <th>NCC</th>
+                                    <th>Số Lượng</th>
+                                    <th class="@ViewBag.IsAdmin">Hành Động</th>
+                                </tr>
+                            </tfoot>
+                        </table>
+                        <p>
+                            @Html.ActionLink("Quay Lại", "Index")
+                        </p>
+                    </div>
+                    <!-- /.card-body -->
+                </div>
+                <!-- /.card -->
+            </div>
+            <!-- /.col -->
+        </div>
+        <!-- /.row -->
+    </section>
+    <!-- /.content -->
+    <!-- /.content -->
+</div>
