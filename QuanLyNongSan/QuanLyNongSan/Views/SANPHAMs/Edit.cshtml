@@ -1,0 +1,173 @@
+﻿@model QuanLyNongSan.Models.SANPHAM
+
+@{
+    ViewBag.Title = "Chỉnh Sửa - Sản Phẩm " + ViewBag.Name;
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    List<QuanLyNongSan.Models.NHACUNGCAP> ListNCC = ViewBag.ListNCC as List<QuanLyNongSan.Models.NHACUNGCAP>;
+    List<QuanLyNongSan.Models.LOAISANPHAM> ListLSP = ViewBag.ListLSP as List<QuanLyNongSan.Models.LOAISANPHAM>;
+}
+
+<div class="content-wrapper" style="min-height: 1200.88px;">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+        <div class="container-fluid">
+            <div class="row mb-2">
+                <div class="col-sm-6">
+                    <h1>Sản Phẩm</h1>
+                </div>
+                <div class="col-sm-6">
+                    <ol class="breadcrumb float-sm-right">
+                        @*<li class="breadcrumb-item"><a href="#">Home</a></li>
+                            <li class="breadcrumb-item active">DataTables</li>*@
+                    </ol>
+                </div>
+            </div>
+        </div><!-- /.container-fluid -->
+    </section>
+    <!-- Main content -->
+    <section class="content">
+        <div class="row">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-header">
+                        <div class="col-2 ">
+                            <a href="/Sanphams/Create" class="btn btn-block btn-success"><i class="fas fa-plus"></i> Thêm mới</a>
+                        </div>
+                    </div>
+                    <!-- /.card-header -->
+                    <div class="card-body">
+
+                        @using (Html.BeginForm())
+                        {
+                            @Html.AntiForgeryToken()
+
+                            <div class="form-horizontal">
+                                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                                @Html.HiddenFor(model => model.MaSP)
+
+                                <div class="form-group">
+                                    @Html.LabelFor(model => model.MaLoai, htmlAttributes: new { @class = "control-label col-md-2" })
+                                    <div class="col-md-5">
+                                        <select class="form-control" id="MaLoai" name="MaLoai">
+                                            @foreach (var item in ListLSP)
+                                            {
+                                                if (item.MaLoai == Model.MaLoai)
+                                                {
+                                                    <option selected value="@item.MaLoai">@item.TenLoai</option>
+                                                }
+                                                else
+                                                {
+                                                    <option value="@item.MaLoai">@item.TenLoai</option>
+                                                }
+                                            }
+                                        </select>
+                                        @Html.ValidationMessageFor(model => model.MaLoai, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    @Html.LabelFor(model => model.MaNCC, htmlAttributes: new { @class = "control-label col-md-2" })
+                                    <div class="col-md-5">
+                                        <select class="form-control" id="MaNCC" name="MaNCC">
+                                            @foreach (var item in ListNCC)
+                                            {
+                                                if (item.MaNCC == Model.MaNCC)
+                                                {
+                                                    <option selected value="@item.MaNCC">@item.TenNhaCC</option>
+                                                }
+                                                else
+                                                {
+                                                    <option value="@item.MaNCC">@item.TenNhaCC</option>
+                                                }
+                                            }
+                                        </select>
+                                        @Html.ValidationMessageFor(model => model.MaNCC, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    @Html.LabelFor(model => model.TenSP, htmlAttributes: new { @class = "control-label col-md-2" })
+                                    <div class="col-md-5">
+                                        @Html.EditorFor(model => model.TenSP, new { htmlAttributes = new { @class = "form-control" } })
+                                        @Html.ValidationMessageFor(model => model.TenSP, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    @Html.LabelFor(model => model.TrongLuong, htmlAttributes: new { @class = "control-label col-md-2" })
+                                    <div class="col-md-5">
+                                        @Html.EditorFor(model => model.TrongLuong, new { htmlAttributes = new { @class = "form-control" } })
+                                        @Html.ValidationMessageFor(model => model.TrongLuong, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    @Html.LabelFor(model => model.ThoiHanSuDung, htmlAttributes: new { @class = "control-label col-md-2" })
+                                    <div class="col-md-5">
+                                        @Html.EditorFor(model => model.ThoiHanSuDung, new { htmlAttributes = new { @class = "form-control" } })
+                                        @Html.ValidationMessageFor(model => model.ThoiHanSuDung, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    @Html.LabelFor(model => model.QuyCachDongGoi, htmlAttributes: new { @class = "control-label col-md-2" })
+                                    <div class="col-md-5">
+                                        @Html.EditorFor(model => model.QuyCachDongGoi, new { htmlAttributes = new { @class = "form-control" } })
+                                        @Html.ValidationMessageFor(model => model.QuyCachDongGoi, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    @Html.LabelFor(model => model.Gia, htmlAttributes: new { @class = "control-label col-md-2" })
+                                    <div class="col-md-5">
+                                        @Html.EditorFor(model => model.Gia, new { htmlAttributes = new { @class = "form-control" } })
+                                        @Html.ValidationMessageFor(model => model.Gia, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="control-label col-md-2">Thời Gian</label>
+                                    <div class="col-md-5">
+                                        @Html.EditorFor(model => model.ThoiGian, new { htmlAttributes = new { @class = "form-control" } })
+                                        @Html.ValidationMessageFor(model => model.ThoiGian, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="control-label col-md-2">Bảo Quản</label>
+                                    <div class="col-md-5">
+                                        @Html.EditorFor(model => model.BaoQuan, new { htmlAttributes = new { @class = "form-control" } })
+                                        @Html.ValidationMessageFor(model => model.BaoQuan, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+                                
+                                <div class="form-group">
+                                    @Html.LabelFor(model => model.Ghichu, htmlAttributes: new { @class = "control-label col-md-2" })
+                                    <div class="col-md-5">
+                                        @Html.TextAreaFor(model => model.Ghichu, new { @class = "form-control" })
+                                        @Html.ValidationMessageFor(model => model.Ghichu, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <div class="col-md-offset-2 col-md-10">
+                                        <input type="submit" value="Lưu" class="btn btn-default" />
+                                    </div>
+                                </div>
+                            </div>
+                        }
+
+                        <div>
+                            @Html.ActionLink("Quay Lại", "Index")
+                        </div>
+
+                    </div>
+                    <!-- /.card-body -->
+                </div>
+                <!-- /.card -->
+            </div>
+            <!-- /.col -->
+        </div>
+        <!-- /.row -->
+    </section>
+    <!-- /.content -->
+    <!-- /.content -->
+</div>

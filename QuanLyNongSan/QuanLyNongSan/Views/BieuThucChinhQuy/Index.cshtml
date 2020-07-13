@@ -1,0 +1,138 @@
+﻿
+@{
+    ViewBag.Title = "Tìm kiếm Biểu thức Chính quy";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<style>
+    .dropdown-menu > li > a:hover, .dropdown-menu > li > a:focus {
+        text-decoration: none;
+        color: #262626;
+        background-color: #f5f5f5;
+    }
+
+    .open > .dropdown-menu {
+        display: block;
+    }
+
+    .input-group-btn {
+        position: relative;
+        font-size: 0;
+        white-space: nowrap;
+    }
+
+    .dropdown-menu {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        z-index: 1000;
+        display: none;
+        float: left;
+        min-width: 160px;
+        padding: 5px 0;
+        margin: 2px 0 0;
+        list-style: none;
+        font-size: 14px;
+        background-color: #fff;
+        border: 1px solid #ccc;
+        border: 1px solid rgba(0,0,0,.15);
+        border-radius: 4px;
+        -webkit-box-shadow: 0 6px 12px rgba(0,0,0,.175);
+        box-shadow: 0 6px 12px rgba(0,0,0,.175);
+        background-clip: padding-box;
+    }
+
+        .dropdown-menu > li > a {
+            display: block;
+            padding: 3px 20px;
+            clear: both;
+            font-weight: 400;
+            line-height: 1.428571429;
+            color: #333;
+            white-space: nowrap;
+        }
+</style>
+<div class="content-wrapper" style="min-height: 1200.88px;">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+        <div class="container-fluid">
+            <div class="row mb-2">
+                <div class="col-sm-6">
+                    <h1>Tìm Kiếm</h1>
+                </div>
+                <div class="col-sm-6">
+                    <ol class="breadcrumb float-sm-right">
+                        @*<li class="breadcrumb-item"><a href="#">Home</a></li>
+                            <li class="breadcrumb-item active">DataTables</li>*@
+                    </ol>
+                </div>
+            </div>
+        </div><!-- /.container-fluid -->
+    </section>
+    <!-- Main content -->
+    <section class="content">
+        <div class="row">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-header">
+                        <div class="row">
+                            <div class="col-6">
+                                @using (Html.BeginForm("Index", "BieuThucChinhQuy", FormMethod.Post))
+                                {
+                                    <div class="input-group">
+                                        <input type="text" class="form-control" id="ValueSearch11" name="ValueSearch11" placeholder="Search string ....">
+                                        <span class="input-group-btn">
+                                            <button class="btn btn-default" type="submit"><i class="fas fa-search"></i></button>
+                                        </span>
+                                    </div>
+                                }
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <!-- /.card-header -->
+                    <div class="card-body">
+                        @if (ViewBag.Data != null)
+                        {
+
+                            <h3>Tìm kiếm từ khóa "@ViewBag.SQLString"</h3>
+                            <table id="example1" class="table table-bordered table-striped">
+                                <thead>
+                                    <tr>
+                                        <th>
+                                            Kết Quả
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach (string item in ViewBag.Data)
+                                    {
+                                        <tr>
+                                            <td>
+                                                @item
+                                            </td>
+                                        </tr>
+                                    }
+                                </tbody>
+                                <tfoot>
+                                    <tr>
+                                        <th>
+                                            Kết Quả
+                                        </th>
+
+                                    </tr>
+                                </tfoot>
+                            </table>
+                        }
+                        <!-- /.card-body -->
+                    </div>
+                    <!-- /.card -->
+                </div>
+                <!-- /.col -->
+            </div>
+        </div>
+        <!-- /.row -->
+    </section>
+    <!-- /.content -->
+    <!-- /.content -->
+</div>

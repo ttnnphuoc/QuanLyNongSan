@@ -1,0 +1,166 @@
+﻿@model QuanLyNongSan.Models.DONHANGNHAP
+
+@{
+    ViewBag.Title = "Chỉnh sửa đơn hàng nhập";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    List<QuanLyNongSan.Models.NHANVIEN> ListNhanVien = ViewBag.NhanVien as List<QuanLyNongSan.Models.NHANVIEN>;
+
+    List<QuanLyNongSan.Models.NHACUNGCAP> ListNCC = ViewBag.ListNCC as List<QuanLyNongSan.Models.NHACUNGCAP>;
+
+    List<QuanLyNongSan.Models.SANPHAM> ListSP = ViewBag.ListSP as List<QuanLyNongSan.Models.SANPHAM>;
+    string date = Convert.ToDateTime(Model.NgayNhap.ToString()).ToString("yyyy-MM-dd");
+}
+
+<div class="content-wrapper" style="min-height: 1200.88px;">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+        <div class="container-fluid">
+            <div class="row mb-2">
+                <div class="col-sm-6">
+                    <h1>Đơn Hàng Nhập</h1>
+                </div>
+                <div class="col-sm-6">
+                    <ol class="breadcrumb float-sm-right">
+                        @*<li class="breadcrumb-item"><a href="#">Home</a></li>
+                            <li class="breadcrumb-item active">DataTables</li>*@
+                    </ol>
+                </div>
+            </div>
+        </div><!-- /.container-fluid -->
+    </section>
+    <!-- Main content -->
+    <section class="content">
+        <div class="row">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-header">
+                        <div class="col-2">
+                            <a href="/DonHangNhaps/Create" class="btn btn-block btn-success"><i class="fas fa-plus"></i> Thêm mới</a>
+                        </div>
+                    </div>
+                    <!-- /.card-header -->
+                    <div class="card-body">
+
+                        @using (Html.BeginForm())
+                        {
+                            @Html.AntiForgeryToken()
+
+                            <div class="form-horizontal">
+                                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                                @Html.HiddenFor(model => model.MaDHN)
+
+                                <div class="form-group">
+                                    <label class="control-label col-md-2">NCC</label>
+                                    <div class="col-md-5">
+                                        <select class="list-box tri-state form-control" id="MaNhaCC" name="MaNhaCC">
+                                            @foreach (var item in ListNCC)
+                                            {
+                                                if (item.MaNCC == Model.MaNhaCC)
+                                                {
+                                                    <option selected value="@item.MaNCC">@item.TenNhaCC</option>
+                                                }
+                                                else
+                                                {
+                                                    <option value="@item.MaNCC">@item.TenNhaCC</option>
+                                                }
+
+                                            }
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    @Html.LabelFor(model => model.NgayNhap, htmlAttributes: new { @class = "control-label col-md-2" })
+                                    <div class="col-md-5">
+                                        <input type="date"class="form-control" id="NgayNhap" name="NgayNhap"
+                                               value="@date">
+                                        @Html.ValidationMessageFor(model => model.NgayNhap, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    @Html.LabelFor(model => model.MaNV, htmlAttributes: new { @class = "control-label col-md-2" })
+                                    <div class="col-md-5">
+                                        <select class="list-box tri-state form-control" id="MaNV" name="MaNV">
+                                            @foreach (var item in ListNhanVien)
+                                            {
+                                                if (item.MaNV == Model.MaNV)
+                                                {
+                                                    <option selected value="@item.MaNV">@item.Hoten</option>
+                                                }
+                                                else
+                                                {
+                                                    <option value="@item.MaNV">@item.Hoten</option>
+                                                }
+
+                                            }
+                                        </select>
+                                        @Html.ValidationMessageFor(model => model.MaNV, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="control-label col-md-2">Sản Phẩm</label>
+                                    <div class="col-md-5">
+                                        <select class="select2bs4 list-box tri-state form-control" multiple="multiple" id="MaSP" name="MaSP">
+                                            @foreach (var item in ListSP)
+                                            {
+                                                <option value="@item.MaSP">@item.MaSP<text>_</text>@item.TenSP</option>
+                                            }
+                                        </select>
+                                        @Html.ValidationMessageFor(model => model.SoLuong, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="control-label col-md-2">Số Lượng</label>
+                                    <div class="col-md-5">
+                                        <input type="text" class="form-control" id="SoLuong" value="@ViewBag.SoLuong"  name="SoLuong">
+                                        @Html.ValidationMessageFor(model => model.SoLuong, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="control-label col-md-2">Thời Gian</label>
+                                    <div class="col-md-5">
+                                        @Html.TextBoxFor(model => model.ThoiGian, new { @class = "form-control" })
+                                        @Html.ValidationMessageFor(model => model.ThoiGian, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="control-label col-md-2">Phương Tiện</label>
+                                    <div class="col-md-5">
+                                        @Html.TextBoxFor(model => model.PhuongTien, new { @class = "form-control" })
+                                        @Html.ValidationMessageFor(model => model.PhuongTien, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <div class="col-md-offset-2 col-md-10">
+                                        <input type="submit" value="Lưu" class="btn btn-default" />
+                                    </div>
+                                </div>
+                            </div>
+                        }
+
+                        <div>
+                            @Html.ActionLink("Quay Lại", "Index")
+                        </div>
+
+                    </div>
+                    <!-- /.card-body -->
+                </div>
+                <!-- /.card -->
+            </div>
+            <!-- /.col -->
+        </div>
+        <!-- /.row -->
+    </section>
+    <!-- /.content -->
+    <!-- /.content -->
+</div>
+<script>
+    sp = [@ViewBag.SanPhamNhap];
+    sanphamXuat = undefined;
+</script>

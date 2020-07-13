@@ -1,0 +1,139 @@
+﻿@model IEnumerable<QuanLyNongSan.Models.DONHANGNHAP>
+
+@{
+    ViewBag.Title = "Danh Sách Đơn hàng nhập";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    List<QuanLyNongSan.Models.NHANVIEN> ListNhanVien = ViewBag.NhanVien as List<QuanLyNongSan.Models.NHANVIEN>;
+    List<QuanLyNongSan.Models.NHACUNGCAP> ListNCC = ViewBag.ListNCC as List<QuanLyNongSan.Models.NHACUNGCAP>;
+
+
+}
+
+<div class="content-wrapper" style="min-height: 1200.88px;">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+        <div class="container-fluid">
+            <div class="row mb-2">
+                <div class="col-sm-6">
+                    <h1>Đơn Hàng Nhập</h1>
+                </div>
+                <div class="col-sm-6">
+                    <ol class="breadcrumb float-sm-right">
+                        @*<li class="breadcrumb-item"><a href="#">Home</a></li>
+                            <li class="breadcrumb-item active">DataTables</li>*@
+                    </ol>
+                </div>
+            </div>
+        </div><!-- /.container-fluid -->
+    </section>
+    <!-- Main content -->
+    <section class="content">
+        <div class="row">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-header">
+                        <div class="col-2 @ViewBag.Add">
+                            <a href="/DonHangNhaps/Create" class="btn btn-block btn-success"><i class="fas fa-plus"></i> Thêm mới</a>
+                        </div>
+                    </div>
+                    <!-- /.card-header -->
+                    <div class="card-body">
+                        <table id="example1" class="table table-bordered table-striped">
+                            <thead>
+                                <tr>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.MaDHN)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model=>model.MaNhaCC)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.NgayNhap)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.MaNV)
+                                    </th>
+                                    @*<th>
+                                        @Html.DisplayNameFor(model => model.isXoa)
+                                    </th>*@
+                                    <th class="@ViewBag.IsAdmin">Hành Động</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                              @foreach (var item in Model)
+                              {
+                                <tr>
+                                    <td>
+                                        @Html.ActionLink(item.MaDHN + "", "Details", new { id=item.MaDHN })
+                                    </td>
+                                    <td>
+                                        @if (ListNCC.FirstOrDefault(x => x.MaNCC == item.MaNhaCC) != null)
+                                        {
+                                            @ListNCC.FirstOrDefault(x => x.MaNCC == item.MaNhaCC).TenNhaCC
+                                        }
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.NgayNhap)
+                                    </td>
+                                    <td>
+                                        @if(ListNhanVien.FirstOrDefault(x=>x.MaNV == item.MaNV) != null)
+                                        {
+                                            @ListNhanVien.FirstOrDefault(x => x.MaNV == item.MaNV).Hoten
+                                        }
+                                    </td>
+                                    @*<td>
+                                        @if ((bool)item.isXoa)
+                                        {
+                                            <span>Đã Xóa</span>
+                                        }
+                                        else
+                                        {
+                                            <span>Chưa Xóa</span>
+                                        }
+                                    </td>*@
+                                    <td class="@ViewBag.IsAdmin">
+                                        <a href="@Url.Action("Edit", "Donhangnhaps",new { id = item.MaDHN })" title="Sửa">
+                                            <i class="fas fa-pencil-alt"></i>
+                                        </a>|
+                                        <a style="color:red;" href="@Url.Action("Delete", "Donhangnhaps",new { id = item.MaDHN })" title="Xóa">
+                                            <i class="fas fa-trash-alt"></i>
+                                        </a>
+                                    </td>
+                                </tr>
+                              }
+
+
+                            </tbody>
+                            <tfoot>
+                                <tr>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.MaDHN)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.MaNhaCC)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.NgayNhap)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.MaNV)
+                                    </th>
+                                    @*<th>
+                                        @Html.DisplayNameFor(model => model.isXoa)
+                                    </th>*@
+                                    <th class="@ViewBag.IsAdmin">Hành Động</th>
+                                </tr>
+                            </tfoot>
+                        </table>
+                    </div>
+                    <!-- /.card-body -->
+                </div>
+                <!-- /.card -->
+            </div>
+            <!-- /.col -->
+        </div>
+        <!-- /.row -->
+    </section>
+    <!-- /.content -->
+    <!-- /.content -->
+</div>

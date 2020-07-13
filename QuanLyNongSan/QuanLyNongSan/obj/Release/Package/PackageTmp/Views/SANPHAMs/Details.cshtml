@@ -1,0 +1,117 @@
+﻿@model QuanLyNongSan.Models.SANPHAM
+
+@{
+    ViewBag.Title = "Chi Tiết Sản Phẩm";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="content-wrapper" style="min-height: 1200.88px;">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+        <div class="container-fluid">
+            <div class="row mb-2">
+                <div class="col-sm-6">
+                    <h1>Sản Phẩm</h1>
+                </div>
+                <div class="col-sm-6">
+                    <ol class="breadcrumb float-sm-right">
+                        @*<li class="breadcrumb-item"><a href="#">Home</a></li>
+                            <li class="breadcrumb-item active">DataTables</li>*@
+                    </ol>
+                </div>
+            </div>
+        </div><!-- /.container-fluid -->
+    </section>
+    <!-- Main content -->
+    <section class="content">
+        <div class="row">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-header">
+                        <div class="col-2 @ViewBag.Add">
+                            <a href="/SanPhams/Create" class="btn btn-block btn-success"><i class="fas fa-plus"></i> Thêm mới</a>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <dl class="dl-horizontal">
+                            <dt>
+                                @Html.DisplayNameFor(model => model.MaLoai)
+                            </dt>
+
+                            <dd>
+                                @ViewBag.LoaiSP
+                            </dd>
+
+                            <dt>
+                                @Html.DisplayNameFor(model => model.MaNCC)
+                            </dt>
+
+                            <dd>
+                                @ViewBag.NCC
+                            </dd>
+
+                            <dt>
+                                @Html.DisplayNameFor(model => model.TenSP)
+                            </dt>
+
+                            <dd>
+                                @Html.DisplayFor(model => model.TenSP)
+                            </dd>
+
+                            <dt>
+                                @Html.DisplayNameFor(model => model.TrongLuong)
+                            </dt>
+
+                            <dd>
+                                @Html.DisplayFor(model => model.TrongLuong)
+                            </dd>
+
+                            <dt>
+                                @Html.DisplayNameFor(model => model.ThoiHanSuDung)
+                            </dt>
+
+                            <dd>
+                                @Html.DisplayFor(model => model.ThoiHanSuDung)
+                            </dd>
+
+                            <dt>
+                                @Html.DisplayNameFor(model => model.QuyCachDongGoi)
+                            </dt>
+
+                            <dd>
+                                @Html.DisplayFor(model => model.QuyCachDongGoi)
+                            </dd>
+
+                            <dt>
+                                @Html.DisplayNameFor(model => model.Gia)
+                            </dt>
+
+                            <dd>
+                                @Html.DisplayFor(model => model.Gia)
+                            </dd>
+
+                            <dt>
+                                @Html.DisplayNameFor(model => model.Ghichu)
+                            </dt>
+
+                            <dd>
+                                @Html.DisplayFor(model => model.Ghichu)
+                            </dd>
+
+                            @*<dt>
+                                @Html.DisplayNameFor(model => model.isXoa)
+                            </dt>
+
+                            <dd>
+                                @Html.DisplayFor(model => model.isXoa)
+                            </dd>*@
+
+                        </dl>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+
+

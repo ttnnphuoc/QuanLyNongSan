@@ -1,0 +1,168 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="QLCUNGUNGModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="CHITIETDONHANGNHAP">
+    <Key>
+      <PropertyRef Name="MaDHN" />
+      <PropertyRef Name="MaSP" />
+    </Key>
+    <Property Name="MaDHN" Type="Int32" Nullable="false" />
+    <Property Name="MaSP" Type="Int32" Nullable="false" />
+    <Property Name="SoLuong" Type="Int32" />
+    <Property Name="TrangThai" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="isXoa" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="CHITIETDONHANGXUAT">
+    <Key>
+      <PropertyRef Name="MaDHX" />
+      <PropertyRef Name="MaSP" />
+    </Key>
+    <Property Name="MaDHX" Type="Int32" Nullable="false" />
+    <Property Name="MaSP" Type="Int32" Nullable="false" />
+    <Property Name="SoLuong" Type="Int32" />
+    <Property Name="isXoa" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="DAILY">
+    <Key>
+      <PropertyRef Name="MaDL" />
+    </Key>
+    <Property Name="MaDL" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="MaLoai" Type="Int32" />
+    <Property Name="Ten" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="SoDT" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="DiaChi" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="isXoa" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="DONHANGNHAP">
+    <Key>
+      <PropertyRef Name="MaDHN" />
+      <PropertyRef Name="MaNhaCC" />
+    </Key>
+    <Property Name="MaDHN" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="MaNhaCC" Type="Int32" Nullable="false" />
+    <Property Name="NgayNhap" Type="DateTime" Precision="3" />
+    <Property Name="MaNV" Type="Int32" />
+    <Property Name="isXoa" Type="Boolean" />
+    <Property Name="ThoiGian" Type="Int32" />
+    <Property Name="PhuongTien" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="LOAIDAILY">
+    <Key>
+      <PropertyRef Name="MaLoai" />
+    </Key>
+    <Property Name="MaLoai" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Cap" Type="Int32" />
+    <Property Name="MucChietKhau" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="isXoa" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="LOAISANPHAM">
+    <Key>
+      <PropertyRef Name="MaLoai" />
+    </Key>
+    <Property Name="MaLoai" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TenLoai" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="isXoa" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="LUUVET">
+    <Key>
+      <PropertyRef Name="MaDHX" />
+    </Key>
+    <Property Name="MaDHX" Type="Int32" Nullable="false" />
+    <Property Name="MaTram" Type="Int32" Nullable="false" />
+    <Property Name="MaNV" Type="Int32" Nullable="false" />
+    <Property Name="TrangThai" Type="Boolean" />
+    <Property Name="isXoa" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="NHACUNGCAP">
+    <Key>
+      <PropertyRef Name="MaNCC" />
+    </Key>
+    <Property Name="MaNCC" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TenNhaCC" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="GhiChu" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="isXoa" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="NHANVIEN">
+    <Key>
+      <PropertyRef Name="MaNV" />
+    </Key>
+    <Property Name="MaNV" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Hoten" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Ngaysinh" Type="DateTime" Precision="0" />
+    <Property Name="Gioitinh" Type="Boolean" />
+    <Property Name="Ngayvaolam" Type="DateTime" Precision="0" />
+    <Property Name="isXoa" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="SANPHAM">
+    <Key>
+      <PropertyRef Name="MaSP" />
+    </Key>
+    <Property Name="MaSP" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="MaLoai" Type="Int32" />
+    <Property Name="MaNCC" Type="Int32" />
+    <Property Name="TenSP" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="TrongLuong" Type="Double" />
+    <Property Name="ThoiHanSuDung" Type="Int16" />
+    <Property Name="QuyCachDongGoi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Gia" Type="Double" />
+    <Property Name="Ghichu" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="isXoa" Type="Boolean" />
+    <Property Name="ThoiGian" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="BaoQuan" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="TAIKHOAN">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TaiKhoan1" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="MatKhau" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="HoTen" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="ISADMIN" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="TRAM">
+    <Key>
+      <PropertyRef Name="MaTram" />
+    </Key>
+    <Property Name="MaTram" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TenTram" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="isXoa" Type="Boolean" />
+  </EntityType>
+  <EntityContainer Name="QLCUNGUNGEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="CHITIETDONHANGNHAPs" EntityType="Self.CHITIETDONHANGNHAP" />
+    <EntitySet Name="CHITIETDONHANGXUATs" EntityType="Self.CHITIETDONHANGXUAT" />
+    <EntitySet Name="DAILies" EntityType="Self.DAILY" />
+    <EntitySet Name="DONHANGNHAPs" EntityType="Self.DONHANGNHAP" />
+    <EntitySet Name="LOAIDAILies" EntityType="Self.LOAIDAILY" />
+    <EntitySet Name="LOAISANPHAMs" EntityType="Self.LOAISANPHAM" />
+    <EntitySet Name="LUUVETs" EntityType="Self.LUUVET" />
+    <EntitySet Name="NHACUNGCAPs" EntityType="Self.NHACUNGCAP" />
+    <EntitySet Name="NHANVIENs" EntityType="Self.NHANVIEN" />
+    <EntitySet Name="SANPHAMs" EntityType="Self.SANPHAM" />
+    <EntitySet Name="TAIKHOANs" EntityType="Self.TAIKHOAN" />
+    <EntitySet Name="TRAMs" EntityType="Self.TRAM" />
+    <EntitySet Name="DONHANGXUATs" EntityType="QLCUNGUNGModel.DONHANGXUAT" />
+    <EntitySet Name="SQLGOIYs" EntityType="QLCUNGUNGModel.SQLGOIY" />
+  </EntityContainer>
+  <EntityType Name="DONHANGXUAT">
+    <Key>
+      <PropertyRef Name="MaDHX" />
+      <PropertyRef Name="MaDaiLy" />
+    </Key>
+    <Property Name="MaDHX" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="MaDaiLy" Type="Int32" Nullable="false" />
+    <Property Name="MaNV" Type="Int32" />
+    <Property Name="TrangThai" Type="Boolean" />
+    <Property Name="isXoa" Type="Boolean" />
+    <Property Name="ThoiGian" Type="Int32" />
+    <Property Name="PhuongTien" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="SQLGOIY">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NameTable" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="SqlString" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+</Schema>

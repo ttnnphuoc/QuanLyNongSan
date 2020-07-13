@@ -1,0 +1,88 @@
+﻿
+@{
+    ViewBag.Title = "Danh Sách Thao Tác";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="content-wrapper" style="min-height: 1200.88px;">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+        <div class="container-fluid">
+            <div class="row mb-2">
+                <div class="col-sm-6">
+                    <h1>Lịch Sử Thao Tác</h1>
+                </div>
+                <div class="col-sm-6">
+                    <ol class="breadcrumb float-sm-right">
+                        @*<li class="breadcrumb-item"><a href="#">Home</a></li>
+                            <li class="breadcrumb-item active">DataTables</li>*@
+                    </ol>
+                </div>
+            </div>
+        </div><!-- /.container-fluid -->
+    </section>
+    <!-- Main content -->
+    <section class="content">
+        <div class="row">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-header">
+                        Danh Sách Log Thao Tác
+                    </div>
+                    <!-- /.card-header -->
+                    <div class="card-body">
+                        <table id="example1" class="table table-bordered table-striped">
+                            <thead>
+                                <tr>
+                                   <th>ID</th>
+                                    <th>Tài Khoản</th>
+                                    <th>Bảng</th>
+                                    <th>Ngày</th>
+                                    <th>Giờ</th>
+                                    <th>Nội Dung</th>
+                                    <th>Hành Động</th>
+                                </tr>
+
+                            </thead>
+                            <tbody>
+
+                                @foreach (var item in Model)
+                                {
+                                    <tr>
+                                        <td>@item.Id</td>
+                                        <td>@item.Username</td>
+                                        <td>@item.TableName</td>
+                                        <td>@Convert.ToDateTime(@item.TimeAction).ToString("dd/MM/yyyy")</td>
+                                        <td>@Convert.ToDateTime(@item.TimeAction).ToString("HH:mm")</td>
+                                        <td>@Html.Raw(HttpUtility.HtmlDecode(@item.Content))</td>
+                                        <td>@item.Action</td>
+                                    </tr>
+
+                                }
+
+                            </tbody>
+                            <tfoot>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Tài Khoản</th>
+                                    <th>Bảng</th>
+                                    <th>Ngày</th>
+                                    <th>Giờ</th>
+                                    <th>Nội Dung</th>
+                                    <th>Hành Động</th>
+                                </tr>
+                            </tfoot>
+                        </table>
+                    </div>
+                    <!-- /.card-body -->
+                </div>
+                <!-- /.card -->
+            </div>
+            <!-- /.col -->
+        </div>
+        <!-- /.row -->
+    </section>
+    <!-- /.content -->
+    <!-- /.content -->
+</div>
+

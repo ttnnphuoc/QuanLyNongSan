@@ -1,0 +1,1 @@
+SELECT ?LSP_TenLoai ?LSP_MaLoai WHERE { ?x Root:LSP_TenLoai ?LSP_TenLoai.?x Root:LSP_MaLoai ?LSP_MaLoai.}LIMIT 25

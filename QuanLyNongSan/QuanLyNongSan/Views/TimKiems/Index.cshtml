@@ -1,0 +1,860 @@
+﻿
+@{
+    ViewBag.Title = "Tìm kiếm";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    string idDL = "";
+}
+<style>
+    .dropdown-menu > li > a:hover, .dropdown-menu > li > a:focus {
+        text-decoration: none;
+        color: #262626;
+        background-color: #f5f5f5;
+    }
+
+    .open > .dropdown-menu {
+        display: block;
+    }
+
+    .input-group-btn {
+        position: relative;
+        font-size: 0;
+        white-space: nowrap;
+    }
+
+    .dropdown-menu {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        z-index: 1000;
+        display: none;
+        float: left;
+        min-width: 160px;
+        padding: 5px 0;
+        margin: 2px 0 0;
+        list-style: none;
+        font-size: 14px;
+        background-color: #fff;
+        border: 1px solid #ccc;
+        border: 1px solid rgba(0,0,0,.15);
+        border-radius: 4px;
+        -webkit-box-shadow: 0 6px 12px rgba(0,0,0,.175);
+        box-shadow: 0 6px 12px rgba(0,0,0,.175);
+        background-clip: padding-box;
+    }
+
+        .dropdown-menu > li > a {
+            display: block;
+            padding: 3px 20px;
+            clear: both;
+            font-weight: 400;
+            line-height: 1.428571429;
+            color: #333;
+            white-space: nowrap;
+        }
+</style>
+<div class="content-wrapper" style="min-height: 1200.88px;">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+        <div class="container-fluid">
+            <div class="row mb-2">
+                <div class="col-sm-6">
+                    <h1>Tìm Kiếm</h1>
+                </div>
+                <div class="col-sm-6">
+                    <ol class="breadcrumb float-sm-right">
+                        @*<li class="breadcrumb-item"><a href="#">Home</a></li>
+                            <li class="breadcrumb-item active">DataTables</li>*@
+                    </ol>
+                </div>
+            </div>
+        </div><!-- /.container-fluid -->
+    </section>
+    <!-- Main content -->
+    <section class="content">
+        <div class="row">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-header">
+                        <div class="row">
+                            <div class="col-6">
+                                @using (Html.BeginForm("Index", "TimKiems", FormMethod.Post))
+                                {
+                                <div class="input-group">
+                                    <div class="input-group-btn search-panel group-sql">
+                                        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                                            <span id="search_concept">Filter by</span> <span class="caret"></span>
+                                        </button>
+                                        <ul class="dropdown-menu menu-sql" role="menu">
+                                            <li><a href="#product">Sản Phẩm</a></li>
+                                            <li><a href="#nhanvien">Nhân Viên</a></li>
+                                            <li><a href="#category">Loại Sản Phẩm</a></li>
+                                            <li><a href="#NCC">Nhà Cung Cấp</a></li>
+                                            <li><a href="#input">Đơn Hàng Nhập</a></li>
+                                            <li><a href="#output">Đơn Hàng Xuất</a></li>
+                                            <li><a href="#goiy">Gợi Ý</a></li>
+                                        </ul>
+                                    </div>
+                                    <input type="hidden" name="option" value="" id="search_param">
+                                    <input type="text" class="form-control" id="ValueSearch" name="ValueSearch" placeholder="Search string sql....">
+                                    <span class="input-group-btn">
+                                        <button class="btn btn-default" type="submit"><i class="fas fa-search"></i></button>
+                                    </span>
+                                </div>
+                                }
+                            </div>
+                            <div class="col-6">
+                                @using (Html.BeginForm("ReadFileOwl", "TimKiems", FormMethod.Post))
+                                {
+                                <div class="input-group">
+                                    <div class="input-group-btn search-panel group-sparql">
+                                        @*<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                                                <span id="">Filter by</span> <span class="caret"></span>
+                                            </button>*@
+                                        <ul class="dropdown-menu menu-sparql" role="menu">
+                                            <li><a href="#">Sản Phẩm</a></li>
+                                            <li><a href="#">Nhân Viên</a></li>
+                                            <li><a href="#">Loại Sản Phẩm</a></li>
+                                            <li><a href="#">Nhà Cung Cấp</a></li>
+                                            <li><a href="#">Đơn Hàng Nhập</a></li>
+                                            <li><a href="#">Đơn Hàng Xuất</a></li>
+                                            @*<li><a href="#">Lưu Vết</a></li>*@
+                                        </ul>
+                                    </div>
+                                    <input type="hidden" name="option" value="" id="search_param_Sparql">
+                                    <input type="text" class="form-control" id="ValueSearchRegex" name="ValueSearchRegex" placeholder="Search string with regex ....">
+                                    <input type="text" class="form-control" id="ValueSearchSparql" name="ValueSearchSparql" placeholder="Search string with Sparql ....">
+                                    <span class="input-group-btn">
+                                        <button class="btn btn-default" type="submit"><i class="fas fa-search"></i></button>
+                                    </span>
+                                </div>
+                                }
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <!-- /.card-header -->
+                    <div class="card-body">
+                        <h3>@ViewBag.SQLString</h3>
+                        @if (ViewBag.Type == 1)
+                        {
+                            List<QuanLyNongSan.Models.SANPHAM> LisData = ViewBag.LisData as List<QuanLyNongSan.Models.SANPHAM>;
+                            List<QuanLyNongSan.Models.NHACUNGCAP> ListNCC = ViewBag.ListNCC as List<QuanLyNongSan.Models.NHACUNGCAP>;
+                            List<QuanLyNongSan.Models.LOAISANPHAM> ListLSP = ViewBag.ListLSP as List<QuanLyNongSan.Models.LOAISANPHAM>;
+                            <table id="example1" class="table table-bordered table-striped">
+                                <thead>
+                                    <tr>
+                                        <th>
+                                            Mã Loại
+                                        </th>
+                                        <th>
+                                            Mã NCC
+                                        </th>
+                                        <th>
+                                            Tên Sản Phẩm
+                                        </th>
+                                        <th>
+                                            Trọng Lượng
+                                        </th>
+                                        <th>
+                                            HSD
+                                        </th>
+                                        <th>
+                                            Quy Cách
+                                        </th>
+                                        <th>
+                                            Giá
+                                        </th>
+                                        <th>Thời Gian</th>
+                                        <th>Bảo Quản</th>
+                                        <th>
+                                            Ghi Chú
+                                        </th>
+                                    </tr>
+
+                                </thead>
+                                <tbody>
+
+                                    @foreach (var item in LisData)
+                                            {
+                                            <tr>
+                                                <td>
+                                                    @if (@ListLSP.FirstOrDefault(x => x.MaLoai == (int)item.MaLoai) != null)
+                                                        {
+                                                        @ListLSP.FirstOrDefault(x => x.MaLoai == (int)item.MaLoai).TenLoai
+                                                        }
+                                                </td>
+                                                <td>
+                                                    @if (@ListNCC.FirstOrDefault(x => x.MaNCC == (int)item.MaNCC) != null)
+                                                        {
+                                                        @ListNCC.FirstOrDefault(x => x.MaNCC == (int)item.MaNCC).TenNhaCC
+                                                        }
+                                                </td>
+                                                <td>
+                                                    @*@Html.DisplayFor(modelItem => item.TenSP)*@
+                                                    <a href="TimKiems/Details/SP_@item.MaSP"> @item.TenSP</a>
+                                                </td>
+                                                <td>
+                                                    @Html.DisplayFor(modelItem => item.TrongLuong)
+                                                </td>
+                                                <td>
+                                                    @Html.DisplayFor(modelItem => item.ThoiHanSuDung)
+                                                </td>
+                                                <td>
+                                                    @Html.DisplayFor(modelItem => item.QuyCachDongGoi)
+                                                </td>
+                                                <td>
+                                                    @string.Format("{0:N0}", @item.Gia)
+
+                                                </td>
+                                                <td>
+                                                    @Html.DisplayFor(modelItem => item.ThoiGian)
+                                                </td>
+                                                <td>
+                                                    @Html.DisplayFor(modelItem => item.BaoQuan)
+                                                </td>
+                                                <td>
+                                                    @Html.DisplayFor(modelItem => item.Ghichu)
+                                                </td>
+
+                                            </tr>
+
+                                            }
+
+                                </tbody>
+                                <tfoot>
+                                    <tr>
+                                        <th>
+                                            Mã Loại
+                                        </th>
+                                        <th>
+                                            Mã NCC
+                                        </th>
+                                        <th>
+                                            Tên Sản Phẩm
+                                        </th>
+                                        <th>
+                                            Trọng Lượng
+                                        </th>
+                                        <th>
+                                            HSD
+                                        </th>
+                                        <th>
+                                            Quy Cách
+                                        </th>
+                                        <th>
+                                            Giá
+                                        </th>
+                                        <th>Thời Gian</th>
+                                        <th>Bảo Quản</th>
+                                        <th>
+                                            Ghi Chú
+                                        </th>
+                                    </tr>
+                                </tfoot>
+                            </table>
+                        }
+
+
+                        @if (ViewBag.Type == 2)
+                        {
+                            List<QuanLyNongSan.Models.LOAISANPHAM> LisData = ViewBag.LisData as List<QuanLyNongSan.Models.LOAISANPHAM>;
+
+                            <table id="example1" class="table table-bordered table-striped">
+                                <thead>
+                                    <tr>
+                                        <th>
+                                            Tên Loại
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+
+                                    @foreach (var item in LisData)
+                                            {
+                                            <tr>
+                                                <td>
+                                                    @*@Html.DisplayFor(modelItem => item.TenLoai)*@
+                                                    <a href="TimKiems/Details/LSP_@item.MaLoai"> @item.TenLoai</a>
+
+                                                </td>
+                                            </tr>
+                                            }
+                                </tbody>
+                                <tfoot>
+                                    <tr>
+                                        <th>
+                                            Tên Loại
+                                        </th>
+                                    </tr>
+                                </tfoot>
+                            </table>
+                        }
+
+                        @if (ViewBag.Type == 3)
+                        {
+                            List<QuanLyNongSan.Models.NHANVIEN> ListNhanVien = ViewBag.NhanVien as List<QuanLyNongSan.Models.NHANVIEN>;
+                            List<QuanLyNongSan.Models.NHACUNGCAP> ListNCC = ViewBag.ListNCC as List<QuanLyNongSan.Models.NHACUNGCAP>;
+                            List<QuanLyNongSan.Models.DONHANGNHAP> LisData = ViewBag.LisData as List<QuanLyNongSan.Models.DONHANGNHAP>;
+
+                            <table id="example1" class="table table-bordered table-striped">
+                                <thead>
+                                    <tr>
+                                        <th>
+                                            Mã
+                                        </th>
+                                        <th>
+                                            NCC
+                                        </th>
+                                        <th>
+                                            Ngày Nhập
+                                        </th>
+                                        <th>
+                                            Thời Gian
+                                        </th>
+                                        <th>Phương Tiện</th>
+                                        <th>
+                                            Nhân Viên
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach (var item in LisData)
+                                            {
+                                            <tr>
+                                                <td>
+
+                                                    <a href="TimKiems/Details/DHN_@item.MaDHN"> @item.MaDHN</a>
+
+                                                </td>
+                                                <td>
+                                                    @if (ListNCC.FirstOrDefault(x => x.MaNCC == item.MaNhaCC) != null)
+                                                        {
+                                                        @ListNCC.FirstOrDefault(x => x.MaNCC == item.MaNhaCC).TenNhaCC
+                                                        }
+                                                </td>
+                                                <td>
+                                                    @Html.DisplayFor(modelItem => item.NgayNhap)
+                                                </td>
+                                                <td>
+                                                    @Html.DisplayFor(modelItem => item.ThoiGian)
+                                                </td>
+                                                <td>
+                                                    @Html.DisplayFor(modelItem => item.PhuongTien)
+                                                </td>
+                                                <td>
+                                                    @if (ListNhanVien.FirstOrDefault(x => x.MaNV == item.MaNV) != null)
+                                                        {
+                                                        @ListNhanVien.FirstOrDefault(x => x.MaNV == item.MaNV).Hoten
+                                                        }
+                                                </td>
+
+                                            </tr>
+                                            }
+
+
+                                </tbody>
+                                <tfoot>
+                                    <tr>
+                                        <th>
+                                            Mã
+                                        </th>
+                                        <th>
+                                            NCC
+                                        </th>
+                                        <th>
+                                            Ngày Nhập
+                                        </th>
+                                        <th>
+                                            Thời Gian
+                                        </th>
+                                        <th>Phương Tiện</th>
+                                        <th>
+                                            Nhân Viên
+                                        </th>
+                                    </tr>
+                                </tfoot>
+                            </table>
+                        }
+
+                        @if (ViewBag.Type == 4)
+                        {
+                            //List<QuanLyNongSan.Models.DONHANGXUAT> LisData = ViewBag.LisData as List<QuanLyNongSan.Models.DONHANGXUAT>;
+                            List<QuanLyNongSan.Models.NHANVIEN> ListNhanVien = ViewBag.NhanVien as List<QuanLyNongSan.Models.NHANVIEN>;
+                            <table id="example1" class="table table-bordered table-striped">
+                                <thead>
+                                    <tr>
+                                        <th>
+                                            Mã
+                                        </th>
+                                        <th>
+                                            Nhân Viên
+                                        </th>
+                                        <th>Thời Gian</th>
+                                        <th>Phương Tiện</th>
+                                        <th>
+                                            Trạng Thái
+                                        </th>
+
+                                        @if (ViewBag.ShowSoLuong == 1)
+                                                {
+                                                <th>Số Lượng</th>
+                                                <th>Chiết Khấu</th>
+                                                }
+
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach (var item in ViewBag.LisData)
+                                            {
+                                            <tr>
+                                                <td>
+                                                    <a href="TimKiems/Details/DHX_@item.MaDHX"> @item.MaDHX</a>
+
+                                                </td>
+                                                <td>
+                                                    @if (ListNhanVien.FirstOrDefault(x => x.MaNV == item.MaNV) != null)
+                                                        {
+                                                        @ListNhanVien.FirstOrDefault(x => x.MaNV == item.MaNV).Hoten
+                                                        }
+                                                </td>
+                                                <td>@item.ThoiGian</td>
+                                                <td>@item.PhuongTien</td>
+                                                <td>
+                                                    @if ((bool)item.TrangThai)
+                                                        {
+                                                        <span>Đã Xuất</span>
+                                                        }
+                                                        else
+                                                        {
+                                                        <span>Chưa Xuất</span>
+                                                        }
+                                                </td>
+                                                @if (ViewBag.ShowSoLuong == 1)
+                                                    {
+                                                    <td>@item.SoLuong</td>
+                                                    <td>@item.MucChietKhau</td>
+                                                    }
+
+                                            </tr>
+                                            }
+
+
+                                </tbody>
+                                <tfoot>
+                                    <tr>
+                                        <th>
+                                            Mã
+                                        </th>
+                                        <th>
+                                            Nhân Viên
+                                        </th>
+                                        <th>Thời Gian</th>
+                                        <th>Phương Tiện</th>
+                                        <th>
+                                            Trạng Thái
+                                        </th>
+                                        @if (ViewBag.ShowSoLuong == 1)
+                                                {
+                                                <th>Chiết Khấu</th>
+                                                <th>Số Lượng</th>
+                                                }
+
+                                    </tr>
+                                </tfoot>
+                            </table>
+                        }
+
+                        @if (ViewBag.Type == 5)
+                        {
+                            List<QuanLyNongSan.Models.LUUVET> LisData = ViewBag.LisData as List<QuanLyNongSan.Models.LUUVET>;
+
+                            List<QuanLyNongSan.Models.NHANVIEN> ListNhanVien = ViewBag.NhanVien as List<QuanLyNongSan.Models.NHANVIEN>;
+                            List<QuanLyNongSan.Models.TRAM> ListTram = ViewBag.Tram as List<QuanLyNongSan.Models.TRAM>;
+                            <table id="example1" class="table table-bordered table-striped">
+                                <thead>
+                                    <tr>
+                                        <th>
+                                            Mã
+                                        </th>
+                                        <th>
+                                            Trạm
+                                        </th>
+                                        <th>
+                                            Nhân Viên
+                                        </th>
+                                    </tr>
+
+                                </thead>
+                                <tbody>
+                                    @foreach (var item in LisData)
+                                            {
+                                            <tr>
+                                                <td>
+                                                    @Html.DisplayFor(modelItem => item.MaDHX)
+                                                </td>
+                                                <td>
+                                                    @if (ListTram.FirstOrDefault(x => x.MaTram == item.MaTram) != null)
+                                                        {
+                                                        @ListTram.FirstOrDefault(x => x.MaTram == item.MaTram).TenTram
+                                                        }
+                                                </td>
+                                                <td>
+                                                    @if (ListNhanVien.FirstOrDefault(x => x.MaNV == item.MaNV) != null)
+                                                        {
+                                                        @ListNhanVien.FirstOrDefault(x => x.MaNV == item.MaNV).Hoten
+                                                        }
+                                                </td>
+
+                                            </tr>
+                                            }
+
+
+                                </tbody>
+                                <tfoot>
+                                    <tr>
+                                        <th>
+                                            Mã
+                                        </th>
+                                        <th>
+                                            Trạm
+                                        </th>
+                                        <th>
+                                            Nhân Viên
+                                        </th>
+                                    </tr>
+                                </tfoot>
+                            </table>
+                        }
+                        @if (ViewBag.Type == 6)
+                        {
+                            List<QuanLyNongSan.Models.NHACUNGCAP> LisData = ViewBag.LisData as List<QuanLyNongSan.Models.NHACUNGCAP>;
+
+                            <table id="example1" class="table table-bordered table-striped">
+                                <thead>
+                                    <tr>
+                                        <th>
+                                            Tên Nhà Cung Cấp
+                                        </th>
+                                        <th>
+                                            Ghi Chú
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+
+                                    @foreach (var item in LisData)
+                                            {
+                                            <tr>
+                                                <td>
+                                                    <a href="TimKiems/Details/NCC_@item.MaNCC"> @item.TenNhaCC</a>
+                                                </td>
+                                                <td>
+                                                    @Html.DisplayFor(modelItem => item.GhiChu)
+                                                </td>
+                                            </tr>
+                                            }
+
+                                </tbody>
+                                <tfoot>
+                                    <tr>
+                                        <th>
+                                            Tên Nhà Cung Cấp
+                                        </th>
+                                        <th>
+                                            Ghi Chú
+                                        </th>
+                                    </tr>
+                                </tfoot>
+                            </table>
+                        }
+                        <!-- /.card-body -->
+                        @if (ViewBag.Type == 7)
+                        {
+                            List<QuanLyNongSan.Models.NHANVIEN> LisData = ViewBag.LisData as List<QuanLyNongSan.Models.NHANVIEN>;
+
+                            <table id="example1" class="table table-bordered table-striped">
+                                <thead>
+                                    <tr>
+                                        <th>Họ Tên</th>
+                                        <th>Ngày Sinh</th>
+                                        <th>Giới Tính</th>
+                                        <th>Ngày Vào Làm</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+
+                                    @foreach (var item in LisData)
+                                            {
+                                            <tr>
+                                                <td>
+                                                    @*@Html.DisplayFor(modelItem => item.Hoten)*@
+                                                    <a href="TimKiems/Details/NV_@item.MaNV"> @item.Hoten</a>
+                                                </td>
+                                                <td>
+                                                    @Html.DisplayFor(modelItem => item.Ngaysinh)
+                                                </td>
+
+                                                @if ((bool)item.Gioitinh)
+                                                    {
+                                                    <td>Nam</td>
+                                                    }
+                                                    else
+                                                    {
+                                                    <td>Nữ</td>
+                                                    }
+
+                                                <td>
+                                                    @Html.DisplayFor(modelItem => item.Ngayvaolam)
+                                                </td>
+                                            </tr>
+                                            }
+                                </tbody>
+                                <tfoot>
+                                    <tr>
+                                        <th>Họ Tên</th>
+                                        <th>Ngày Sinh</th>
+                                        <th>Giới Tính</th>
+                                        <th>Ngày Vào Làm</th>
+                                    </tr>
+                                </tfoot>
+                            </table>
+                        }
+
+                        @if (ViewBag.Type == 8)
+                        {
+                            <table id="example1" class="table table-bordered table-striped">
+                                <thead>
+                                    <tr>
+                                        <th>Mã ĐL</th>
+                                        <th>Tên</th>
+                                        <th>Số ĐT</th>
+                                        <th>Địa Chỉ</th>
+                                        <th>Mã Loại</th>
+                                        <th>Cấp</th>
+                                        <th>Mục Chiết Khấu</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+
+                                    @foreach (var item in ViewBag.LisData)
+                                            {
+                                            <tr>
+                                                <td>
+                                                    @item.MaDL
+                                                </td>
+                                                <td>
+                                                    @item.Ten
+                                                </td>
+                                                <td>
+                                                    @item.SoDT
+                                                </td>
+                                                <td>
+                                                    @item.DiaChi
+                                                </td>
+                                                <td>
+                                                    @item.MaLoai
+                                                </td>
+                                                <td>
+                                                    @item.Cap
+                                                </td>
+                                                <td>
+                                                    @item.MucChietKhau
+                                                </td>
+                                            </tr>
+                                            }
+                                </tbody>
+                                <tfoot>
+                                    <tr>
+                                        <th>Mã ĐL</th>
+                                        <th>Tên</th>
+                                        <th>Số ĐT</th>
+                                        <th>Địa Chỉ</th>
+                                        <th>Mã Loại</th>
+                                        <th>Cấp</th>
+                                        <th>Mục Chiết Khấu</th>
+                                    </tr>
+                                </tfoot>
+                            </table>
+                        }
+                        @if (ViewBag.Type == 9)
+                        {
+                            <table id="example1" class="table table-bordered table-striped">
+                                <thead>
+                                    <tr>
+                                        <th>Mã ĐL</th>
+                                        <th>Tên</th>
+                                        <th>Số Lượng</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+
+                                    @foreach (var item in ViewBag.LisData)
+                                            {
+                                            <tr>
+                                                <td>
+                                                    @{
+
+                                                            idDL = item.Ma;
+                                                    }
+                                                    @Html.ActionLink(idDL, "Index", "TimKiems", new { ValueSearch = idDL, option = "output", dhx = "1" }, null)
+                                                </td>
+                                                <td>
+                                                    @item.Ten
+                                                </td>
+                                                <td>
+                                                    @item.SoLuong
+                                                </td>
+                                            </tr>
+                                                            }
+                                </tbody>
+                                <tfoot>
+                                    <tr>
+                                        <th>Mã ĐL</th>
+                                        <th>Tên</th>
+                                        <th>Số Lượng</th>
+                                    </tr>
+                                </tfoot>
+                            </table>
+                                                        }
+                        @if (ViewBag.Type == 10)
+                        {
+                            <table id="example1" class="table table-bordered table-striped">
+                                <thead>
+                                    <tr>
+                                        <th>Mã ĐL</th>
+                                        <th>Tên</th>
+                                        <th>Số Lượng</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+
+                                    @foreach (var item in ViewBag.LisData)
+                                            {
+                                            <tr>
+                                                <td>
+                                                    @{
+
+                                                            idDL = item.Ma;
+                                                    }
+                                                    @Html.ActionLink(idDL, "Index", "TimKiems", new { ValueSearch = idDL, option = "input", dhx = "2" }, null)
+                                                </td>
+                                                <td>
+                                                    @item.Ten
+                                                </td>
+                                                <td>
+                                                    @item.SoLuong
+                                                </td>
+                                            </tr>
+                                                            }
+                                </tbody>
+                                <tfoot>
+                                    <tr>
+                                        <th>Mã ĐL</th>
+                                        <th>Tên</th>
+                                        <th>Số Lượng</th>
+                                    </tr>
+                                </tfoot>
+                            </table>
+                                                        }
+                        @if (ViewBag.Type == 11)
+                        {
+                            <table id="example1" class="table table-bordered table-striped">
+                                <thead>
+                                    <tr>
+                                        <th>Mã ĐL</th>
+                                        <th>Tên</th>
+                                        <th>Số Lượng</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+
+                                    @foreach (var item in ViewBag.LisData)
+                                            {
+                                            <tr>
+                                                <td>
+                                                    @{
+
+                                                            idDL = item.Ma;
+                                                    }
+                                                    @Html.ActionLink(idDL, "Index", "TimKiems", new { ValueSearch = idDL, option = "output", dhx = "3" }, null)
+                                                </td>
+                                                <td>
+                                                    @item.Ten
+                                                </td>
+                                                <td>
+                                                    @item.SoLuong
+                                                </td>
+                                            </tr>
+                                                            }
+                                </tbody>
+                                <tfoot>
+                                    <tr>
+                                        <th>Mã ĐL</th>
+                                        <th>Tên</th>
+                                        <th>Số Lượng</th>
+                                    </tr>
+                                </tfoot>
+                            </table>
+                                                        }
+                        @if (ViewBag.Type == 12)
+                        {
+                            <table id="example1" class="table table-bordered table-striped">
+                                <thead>
+                                    <tr>
+                                        <th>Mã DHN</th>
+                                        <th>Nhà Cung Cấp</th>
+                                        <th>Nhân Viên</th>
+                                        <th>Thời Gian</th>
+                                        <th>Phương Tiện</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+
+                                    @foreach (var item in ViewBag.LisData)
+                                            {
+                                            <tr>
+                                                <td>
+                                                    @{
+
+                                                            idDL = item.MaDHN.ToString();
+                                                    }
+                                                    @Html.ActionLink(idDL, "Index", "TimKiems", new { ValueSearch = idDL, option = "input", dhx = "" }, null)
+                                                </td>
+                                                <td>
+                                                    @item.TenNhaCC
+                                                </td>
+                                                <td>
+                                                    @item.Hoten
+                                                </td>
+                                                <td>
+                                                    @item.ThoiGian
+                                                </td>
+                                                <td>
+                                                    @item.PhuongTien
+                                                </td>
+                                            </tr>
+                                                            }
+                                </tbody>
+                                <tfoot>
+                                    <tr>
+                                        <th>Mã DHN</th>
+                                        <th>Nhà Cung Cấp</th>
+                                        <th>Nhân Viên</th>
+                                        <th>Thời Gian</th>
+                                        <th>Phương Tiện</th>
+                                    </tr>
+                                </tfoot>
+                            </table>
+                                                        }
+                    </div>
+                    <!-- /.card -->
+                </div>
+                <!-- /.col -->
+            </div>
+        </div>
+        <!-- /.row -->
+    </section>
+    <!-- /.content -->
+    <!-- /.content -->
+</div>

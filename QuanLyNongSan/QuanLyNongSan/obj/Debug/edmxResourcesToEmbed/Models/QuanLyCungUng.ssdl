@@ -1,0 +1,168 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="QLCUNGUNGModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="CHITIETDONHANGNHAP">
+    <Key>
+      <PropertyRef Name="MaDHN" />
+      <PropertyRef Name="MaSP" />
+    </Key>
+    <Property Name="MaDHN" Type="int" Nullable="false" />
+    <Property Name="MaSP" Type="int" Nullable="false" />
+    <Property Name="SoLuong" Type="int" />
+    <Property Name="TrangThai" Type="nvarchar" MaxLength="50" />
+    <Property Name="isXoa" Type="bit" />
+  </EntityType>
+  <EntityType Name="CHITIETDONHANGXUAT">
+    <Key>
+      <PropertyRef Name="MaDHX" />
+      <PropertyRef Name="MaSP" />
+    </Key>
+    <Property Name="MaDHX" Type="int" Nullable="false" />
+    <Property Name="MaSP" Type="int" Nullable="false" />
+    <Property Name="SoLuong" Type="int" />
+    <Property Name="isXoa" Type="bit" />
+  </EntityType>
+  <EntityType Name="DAILY">
+    <Key>
+      <PropertyRef Name="MaDL" />
+    </Key>
+    <Property Name="MaDL" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="MaLoai" Type="int" />
+    <Property Name="Ten" Type="nvarchar" MaxLength="50" />
+    <Property Name="SoDT" Type="varchar" MaxLength="50" />
+    <Property Name="DiaChi" Type="nvarchar" MaxLength="500" />
+    <Property Name="isXoa" Type="bit" />
+  </EntityType>
+  <EntityType Name="DONHANGNHAP">
+    <Key>
+      <PropertyRef Name="MaDHN" />
+      <PropertyRef Name="MaNhaCC" />
+    </Key>
+    <Property Name="MaDHN" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="MaNhaCC" Type="int" Nullable="false" />
+    <Property Name="NgayNhap" Type="datetime" />
+    <Property Name="MaNV" Type="int" />
+    <Property Name="isXoa" Type="bit" />
+    <Property Name="ThoiGian" Type="int" />
+    <Property Name="PhuongTien" Type="nvarchar" MaxLength="500" />
+  </EntityType>
+  <EntityType Name="DONHANGXUAT">
+    <Key>
+      <PropertyRef Name="MaDHX" />
+      <PropertyRef Name="MaDaiLy" />
+    </Key>
+    <Property Name="MaDHX" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="MaDaiLy" Type="int" Nullable="false" />
+    <Property Name="MaNV" Type="int" />
+    <Property Name="TrangThai" Type="bit" />
+    <Property Name="isXoa" Type="bit" />
+    <Property Name="ThoiGian" Type="int" />
+    <Property Name="PhuongTien" Type="nvarchar" MaxLength="500" />
+  </EntityType>
+  <EntityType Name="LOAIDAILY">
+    <Key>
+      <PropertyRef Name="MaLoai" />
+    </Key>
+    <Property Name="MaLoai" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Cap" Type="int" />
+    <Property Name="MucChietKhau" Type="nvarchar" MaxLength="50" />
+    <Property Name="isXoa" Type="bit" />
+  </EntityType>
+  <EntityType Name="LOAISANPHAM">
+    <Key>
+      <PropertyRef Name="MaLoai" />
+    </Key>
+    <Property Name="MaLoai" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TenLoai" Type="nvarchar" MaxLength="50" />
+    <Property Name="isXoa" Type="bit" />
+  </EntityType>
+  <EntityType Name="LUUVET">
+    <Key>
+      <PropertyRef Name="MaDHX" />
+    </Key>
+    <Property Name="MaDHX" Type="int" Nullable="false" />
+    <Property Name="MaTram" Type="int" Nullable="false" />
+    <Property Name="MaNV" Type="int" Nullable="false" />
+    <Property Name="TrangThai" Type="bit" />
+    <Property Name="isXoa" Type="bit" />
+  </EntityType>
+  <EntityType Name="NHACUNGCAP">
+    <Key>
+      <PropertyRef Name="MaNCC" />
+    </Key>
+    <Property Name="MaNCC" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TenNhaCC" Type="nvarchar" MaxLength="50" />
+    <Property Name="GhiChu" Type="nvarchar" MaxLength="50" />
+    <Property Name="isXoa" Type="bit" />
+  </EntityType>
+  <EntityType Name="NHANVIEN">
+    <Key>
+      <PropertyRef Name="MaNV" />
+    </Key>
+    <Property Name="MaNV" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Hoten" Type="nvarchar" MaxLength="50" />
+    <Property Name="Ngaysinh" Type="date" />
+    <Property Name="Gioitinh" Type="bit" />
+    <Property Name="Ngayvaolam" Type="date" />
+    <Property Name="isXoa" Type="bit" />
+  </EntityType>
+  <EntityType Name="SANPHAM">
+    <Key>
+      <PropertyRef Name="MaSP" />
+    </Key>
+    <Property Name="MaSP" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="MaLoai" Type="int" />
+    <Property Name="MaNCC" Type="int" />
+    <Property Name="TenSP" Type="nvarchar" MaxLength="50" />
+    <Property Name="TrongLuong" Type="float" />
+    <Property Name="ThoiHanSuDung" Type="smallint" />
+    <Property Name="QuyCachDongGoi" Type="nvarchar" MaxLength="50" />
+    <Property Name="Gia" Type="float" />
+    <Property Name="Ghichu" Type="nvarchar" MaxLength="500" />
+    <Property Name="isXoa" Type="bit" />
+    <Property Name="ThoiGian" Type="nvarchar" MaxLength="500" />
+    <Property Name="BaoQuan" Type="nvarchar" MaxLength="500" />
+  </EntityType>
+  <EntityType Name="SQLGOIY">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NameTable" Type="nvarchar" MaxLength="50" />
+    <Property Name="Name" Type="nvarchar(max)" />
+    <Property Name="SqlString" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="TAIKHOAN">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TaiKhoan" Type="nvarchar" MaxLength="50" />
+    <Property Name="MatKhau" Type="nvarchar" MaxLength="50" />
+    <Property Name="HoTen" Type="nvarchar" MaxLength="500" />
+    <Property Name="ISADMIN" Type="bit" />
+  </EntityType>
+  <EntityType Name="TRAM">
+    <Key>
+      <PropertyRef Name="MaTram" />
+    </Key>
+    <Property Name="MaTram" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TenTram" Type="nvarchar" MaxLength="50" />
+    <Property Name="isXoa" Type="bit" />
+  </EntityType>
+  <EntityContainer Name="QLCUNGUNGModelStoreContainer">
+    <EntitySet Name="CHITIETDONHANGNHAP" EntityType="Self.CHITIETDONHANGNHAP" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CHITIETDONHANGXUAT" EntityType="Self.CHITIETDONHANGXUAT" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="DAILY" EntityType="Self.DAILY" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="DONHANGNHAP" EntityType="Self.DONHANGNHAP" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="DONHANGXUAT" EntityType="Self.DONHANGXUAT" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="LOAIDAILY" EntityType="Self.LOAIDAILY" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="LOAISANPHAM" EntityType="Self.LOAISANPHAM" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="LUUVET" EntityType="Self.LUUVET" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="NHACUNGCAP" EntityType="Self.NHACUNGCAP" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="NHANVIEN" EntityType="Self.NHANVIEN" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SANPHAM" EntityType="Self.SANPHAM" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SQLGOIY" EntityType="Self.SQLGOIY" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TAIKHOAN" EntityType="Self.TAIKHOAN" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TRAM" EntityType="Self.TRAM" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

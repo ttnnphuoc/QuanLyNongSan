@@ -1,0 +1,212 @@
+C:\Users\ngocp\OneDrive\Desktop\QLNS\QuanLyNongSan\QuanLyNongSan\bin\ApplicationInsights.config
+C:\Users\ngocp\OneDrive\Desktop\QLNS\QuanLyNongSan\QuanLyNongSan\bin\roslyn\csc.exe
+C:\Users\ngocp\OneDrive\Desktop\QLNS\QuanLyNongSan\QuanLyNongSan\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\ngocp\OneDrive\Desktop\QLNS\QuanLyNongSan\QuanLyNongSan\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\ngocp\OneDrive\Desktop\QLNS\QuanLyNongSan\QuanLyNongSan\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\ngocp\OneDrive\Desktop\QLNS\QuanLyNongSan\QuanLyNongSan\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\ngocp\OneDrive\Desktop\QLNS\QuanLyNongSan\QuanLyNongSan\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\ngocp\OneDrive\Desktop\QLNS\QuanLyNongSan\QuanLyNongSan\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\ngocp\OneDrive\Desktop\QLNS\QuanLyNongSan\QuanLyNongSan\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\ngocp\OneDrive\Desktop\QLNS\QuanLyNongSan\QuanLyNongSan\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\ngocp\OneDrive\Desktop\QLNS\QuanLyNongSan\QuanLyNongSan\bin\roslyn\vbc.exe
+C:\Users\ngocp\OneDrive\Desktop\QLNS\QuanLyNongSan\QuanLyNongSan\bin\roslyn\VBCSCompiler.exe
+C:\Users\ngocp\OneDrive\Desktop\QLNS\QuanLyNongSan\QuanLyNongSan\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\ngocp\OneDrive\Desktop\QLNS\QuanLyNongSan\QuanLyNongSan\bin\QuanLyNongSan.dll.config
+C:\Users\ngocp\OneDrive\Desktop\QLNS\QuanLyNongSan\QuanLyNongSan\bin\QuanLyNongSan.dll
+C:\Users\ngocp\OneDrive\Desktop\QLNS\QuanLyNongSan\QuanLyNongSan\bin\QuanLyNongSan.pdb
+C:\Users\ngocp\OneDrive\Desktop\QLNS\QuanLyNongSan\QuanLyNongSan\bin\Antlr3.Runtime.dll
+C:\Users\ngocp\OneDrive\Desktop\QLNS\QuanLyNongSan\QuanLyNongSan\bin\Core.dll
+C:\Users\ngocp\OneDrive\Desktop\QLNS\QuanLyNongSan\QuanLyNongSan\bin\dotNetRDF.dll
+C:\Users\ngocp\OneDrive\Desktop\QLNS\QuanLyNongSan\QuanLyNongSan\bin\EntityFramework.dll
+C:\Users\ngocp\OneDrive\Desktop\QLNS\QuanLyNongSan\QuanLyNongSan\bin\EntityFramework.SqlServer.dll
+C:\Users\ngocp\OneDrive\Desktop\QLNS\QuanLyNongSan\QuanLyNongSan\bin\HtmlAgilityPack.dll
+C:\Users\ngocp\OneDrive\Desktop\QLNS\QuanLyNongSan\QuanLyNongSan\bin\Microsoft.AI.Agent.Intercept.dll
+C:\Users\ngocp\OneDrive\Desktop\QLNS\QuanLyNongSan\QuanLyNongSan\bin\Microsoft.AI.DependencyCollector.dll
+C:\Users\ngocp\OneDrive\Desktop\QLNS\QuanLyNongSan\QuanLyNongSan\bin\Microsoft.AI.PerfCounterCollector.dll
+C:\Users\ngocp\OneDrive\Desktop\QLNS\QuanLyNongSan\QuanLyNongSan\bin\Microsoft.AI.ServerTelemetryChannel.dll
+C:\Users\ngocp\OneDrive\Desktop\QLNS\QuanLyNongSan\QuanLyNongSan\bin\Microsoft.AI.Web.dll
+C:\Users\ngocp\OneDrive\Desktop\QLNS\QuanLyNongSan\QuanLyNongSan\bin\Microsoft.AI.WindowsServer.dll
+C:\Users\ngocp\OneDrive\Desktop\QLNS\QuanLyNongSan\QuanLyNongSan\bin\Microsoft.ApplicationInsights.dll
+C:\Users\ngocp\OneDrive\Desktop\QLNS\QuanLyNongSan\QuanLyNongSan\bin\Microsoft.AspNet.Identity.Core.dll
+C:\Users\ngocp\OneDrive\Desktop\QLNS\QuanLyNongSan\QuanLyNongSan\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\Users\ngocp\OneDrive\Desktop\QLNS\QuanLyNongSan\QuanLyNongSan\bin\Microsoft.AspNet.Identity.Owin.dll
+C:\Users\ngocp\OneDrive\Desktop\QLNS\QuanLyNongSan\QuanLyNongSan\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\ngocp\OneDrive\Desktop\QLNS\QuanLyNongSan\QuanLyNongSan\bin\Microsoft.Graph.Core.dll
+C:\Users\ngocp\OneDrive\Desktop\QLNS\QuanLyNongSan\QuanLyNongSan\bin\Microsoft.Graph.dll
+C:\Users\ngocp\OneDrive\Desktop\QLNS\QuanLyNongSan\QuanLyNongSan\bin\Microsoft.Owin.dll
+C:\Users\ngocp\OneDrive\Desktop\QLNS\QuanLyNongSan\QuanLyNongSan\bin\Microsoft.Owin.Host.SystemWeb.dll
+C:\Users\ngocp\OneDrive\Desktop\QLNS\QuanLyNongSan\QuanLyNongSan\bin\Microsoft.Owin.Security.Cookies.dll
+C:\Users\ngocp\OneDrive\Desktop\QLNS\QuanLyNongSan\QuanLyNongSan\bin\Microsoft.Owin.Security.dll
+C:\Users\ngocp\OneDrive\Desktop\QLNS\QuanLyNongSan\QuanLyNongSan\bin\Microsoft.Owin.Security.Facebook.dll
+C:\Users\ngocp\OneDrive\Desktop\QLNS\QuanLyNongSan\QuanLyNongSan\bin\Microsoft.Owin.Security.Google.dll
+C:\Users\ngocp\OneDrive\Desktop\QLNS\QuanLyNongSan\QuanLyNongSan\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+C:\Users\ngocp\OneDrive\Desktop\QLNS\QuanLyNongSan\QuanLyNongSan\bin\Microsoft.Owin.Security.OAuth.dll
+C:\Users\ngocp\OneDrive\Desktop\QLNS\QuanLyNongSan\QuanLyNongSan\bin\Microsoft.Owin.Security.Twitter.dll
+C:\Users\ngocp\OneDrive\Desktop\QLNS\QuanLyNongSan\QuanLyNongSan\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\ngocp\OneDrive\Desktop\QLNS\QuanLyNongSan\QuanLyNongSan\bin\Newtonsoft.Json.dll
+C:\Users\ngocp\OneDrive\Desktop\QLNS\QuanLyNongSan\QuanLyNongSan\bin\Owin.dll
+C:\Users\ngocp\OneDrive\Desktop\QLNS\QuanLyNongSan\QuanLyNongSan\bin\System.Buffers.dll
+C:\Users\ngocp\OneDrive\Desktop\QLNS\QuanLyNongSan\QuanLyNongSan\bin\System.Diagnostics.DiagnosticSource.dll
+C:\Users\ngocp\OneDrive\Desktop\QLNS\QuanLyNongSan\QuanLyNongSan\bin\System.Memory.dll
+C:\Users\ngocp\OneDrive\Desktop\QLNS\QuanLyNongSan\QuanLyNongSan\bin\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\ngocp\OneDrive\Desktop\QLNS\QuanLyNongSan\QuanLyNongSan\bin\System.ValueTuple.dll
+C:\Users\ngocp\OneDrive\Desktop\QLNS\QuanLyNongSan\QuanLyNongSan\bin\System.Web.Helpers.dll
+C:\Users\ngocp\OneDrive\Desktop\QLNS\QuanLyNongSan\QuanLyNongSan\bin\System.Web.Mvc.dll
+C:\Users\ngocp\OneDrive\Desktop\QLNS\QuanLyNongSan\QuanLyNongSan\bin\System.Web.Optimization.dll
+C:\Users\ngocp\OneDrive\Desktop\QLNS\QuanLyNongSan\QuanLyNongSan\bin\System.Web.Razor.dll
+C:\Users\ngocp\OneDrive\Desktop\QLNS\QuanLyNongSan\QuanLyNongSan\bin\System.Web.WebPages.Deployment.dll
+C:\Users\ngocp\OneDrive\Desktop\QLNS\QuanLyNongSan\QuanLyNongSan\bin\System.Web.WebPages.dll
+C:\Users\ngocp\OneDrive\Desktop\QLNS\QuanLyNongSan\QuanLyNongSan\bin\System.Web.WebPages.Razor.dll
+C:\Users\ngocp\OneDrive\Desktop\QLNS\QuanLyNongSan\QuanLyNongSan\bin\VDS.Common.dll
+C:\Users\ngocp\OneDrive\Desktop\QLNS\QuanLyNongSan\QuanLyNongSan\bin\WebGrease.dll
+C:\Users\ngocp\OneDrive\Desktop\QLNS\QuanLyNongSan\QuanLyNongSan\bin\Core.pdb
+C:\Users\ngocp\OneDrive\Desktop\QLNS\QuanLyNongSan\QuanLyNongSan\bin\dotNetRDF.xml
+C:\Users\ngocp\OneDrive\Desktop\QLNS\QuanLyNongSan\QuanLyNongSan\bin\HtmlAgilityPack.pdb
+C:\Users\ngocp\OneDrive\Desktop\QLNS\QuanLyNongSan\QuanLyNongSan\bin\HtmlAgilityPack.xml
+C:\Users\ngocp\OneDrive\Desktop\QLNS\QuanLyNongSan\QuanLyNongSan\bin\Microsoft.AI.DependencyCollector.xml
+C:\Users\ngocp\OneDrive\Desktop\QLNS\QuanLyNongSan\QuanLyNongSan\bin\Microsoft.AI.PerfCounterCollector.xml
+C:\Users\ngocp\OneDrive\Desktop\QLNS\QuanLyNongSan\QuanLyNongSan\bin\Microsoft.AI.ServerTelemetryChannel.xml
+C:\Users\ngocp\OneDrive\Desktop\QLNS\QuanLyNongSan\QuanLyNongSan\bin\Microsoft.AI.Web.xml
+C:\Users\ngocp\OneDrive\Desktop\QLNS\QuanLyNongSan\QuanLyNongSan\bin\Microsoft.AI.WindowsServer.xml
+C:\Users\ngocp\OneDrive\Desktop\QLNS\QuanLyNongSan\QuanLyNongSan\bin\Microsoft.ApplicationInsights.pdb
+C:\Users\ngocp\OneDrive\Desktop\QLNS\QuanLyNongSan\QuanLyNongSan\bin\Microsoft.ApplicationInsights.xml
+C:\Users\ngocp\OneDrive\Desktop\QLNS\QuanLyNongSan\QuanLyNongSan\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\ngocp\OneDrive\Desktop\QLNS\QuanLyNongSan\QuanLyNongSan\bin\Microsoft.Graph.xml
+C:\Users\ngocp\OneDrive\Desktop\QLNS\QuanLyNongSan\QuanLyNongSan\bin\Microsoft.Graph.Core.xml
+C:\Users\ngocp\OneDrive\Desktop\QLNS\QuanLyNongSan\QuanLyNongSan\bin\Newtonsoft.Json.xml
+C:\Users\ngocp\OneDrive\Desktop\QLNS\QuanLyNongSan\QuanLyNongSan\bin\System.Buffers.xml
+C:\Users\ngocp\OneDrive\Desktop\QLNS\QuanLyNongSan\QuanLyNongSan\bin\System.Diagnostics.DiagnosticSource.xml
+C:\Users\ngocp\OneDrive\Desktop\QLNS\QuanLyNongSan\QuanLyNongSan\bin\System.Memory.xml
+C:\Users\ngocp\OneDrive\Desktop\QLNS\QuanLyNongSan\QuanLyNongSan\bin\System.Runtime.CompilerServices.Unsafe.xml
+C:\Users\ngocp\OneDrive\Desktop\QLNS\QuanLyNongSan\QuanLyNongSan\bin\System.Web.Helpers.xml
+C:\Users\ngocp\OneDrive\Desktop\QLNS\QuanLyNongSan\QuanLyNongSan\bin\System.Web.Mvc.xml
+C:\Users\ngocp\OneDrive\Desktop\QLNS\QuanLyNongSan\QuanLyNongSan\bin\System.Web.Optimization.xml
+C:\Users\ngocp\OneDrive\Desktop\QLNS\QuanLyNongSan\QuanLyNongSan\bin\System.Web.Razor.xml
+C:\Users\ngocp\OneDrive\Desktop\QLNS\QuanLyNongSan\QuanLyNongSan\bin\System.Web.WebPages.xml
+C:\Users\ngocp\OneDrive\Desktop\QLNS\QuanLyNongSan\QuanLyNongSan\bin\System.Web.WebPages.Deployment.xml
+C:\Users\ngocp\OneDrive\Desktop\QLNS\QuanLyNongSan\QuanLyNongSan\bin\System.Web.WebPages.Razor.xml
+C:\Users\ngocp\OneDrive\Desktop\QLNS\QuanLyNongSan\QuanLyNongSan\bin\VDS.Common.pdb
+C:\Users\ngocp\OneDrive\Desktop\QLNS\QuanLyNongSan\QuanLyNongSan\bin\VDS.Common.xml
+C:\Users\ngocp\OneDrive\Desktop\QLNS\QuanLyNongSan\QuanLyNongSan\bin\Antlr3.Runtime.pdb
+C:\Users\ngocp\OneDrive\Desktop\QLNS\QuanLyNongSan\QuanLyNongSan\bin\EntityFramework.xml
+C:\Users\ngocp\OneDrive\Desktop\QLNS\QuanLyNongSan\QuanLyNongSan\bin\EntityFramework.SqlServer.xml
+C:\Users\ngocp\OneDrive\Desktop\QLNS\QuanLyNongSan\QuanLyNongSan\bin\Microsoft.AspNet.Identity.Core.xml
+C:\Users\ngocp\OneDrive\Desktop\QLNS\QuanLyNongSan\QuanLyNongSan\bin\Microsoft.AspNet.Identity.Owin.xml
+C:\Users\ngocp\OneDrive\Desktop\QLNS\QuanLyNongSan\QuanLyNongSan\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\Users\ngocp\OneDrive\Desktop\QLNS\QuanLyNongSan\QuanLyNongSan\bin\Microsoft.Owin.xml
+C:\Users\ngocp\OneDrive\Desktop\QLNS\QuanLyNongSan\QuanLyNongSan\bin\Microsoft.Owin.Host.SystemWeb.xml
+C:\Users\ngocp\OneDrive\Desktop\QLNS\QuanLyNongSan\QuanLyNongSan\bin\Microsoft.Owin.Security.xml
+C:\Users\ngocp\OneDrive\Desktop\QLNS\QuanLyNongSan\QuanLyNongSan\bin\Microsoft.Owin.Security.Facebook.xml
+C:\Users\ngocp\OneDrive\Desktop\QLNS\QuanLyNongSan\QuanLyNongSan\bin\Microsoft.Owin.Security.Cookies.xml
+C:\Users\ngocp\OneDrive\Desktop\QLNS\QuanLyNongSan\QuanLyNongSan\bin\Microsoft.Owin.Security.OAuth.xml
+C:\Users\ngocp\OneDrive\Desktop\QLNS\QuanLyNongSan\QuanLyNongSan\bin\Microsoft.Owin.Security.Google.xml
+C:\Users\ngocp\OneDrive\Desktop\QLNS\QuanLyNongSan\QuanLyNongSan\bin\Microsoft.Owin.Security.Twitter.xml
+C:\Users\ngocp\OneDrive\Desktop\QLNS\QuanLyNongSan\QuanLyNongSan\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+C:\Users\ngocp\OneDrive\Desktop\QLNS\QuanLyNongSan\QuanLyNongSan\obj\Release\QuanLyNongSan.dll
+C:\Users\ngocp\OneDrive\Desktop\QLNS\QuanLyNongSan\QuanLyNongSan\obj\Release\QuanLyNongSan.pdb
+C:\Users\ngocp\OneDrive\Desktop\QLNS\QuanLyNongSan\QuanLyNongSan\obj\Release\QuanLyNongSan.csprojResolveAssemblyReference.cache
+C:\Users\ngocp\OneDrive\Desktop\Jobs Freelance\QLNS\QuanLyNongSan\QuanLyNongSan\bin\ApplicationInsights.config
+C:\Users\ngocp\OneDrive\Desktop\Jobs Freelance\QLNS\QuanLyNongSan\QuanLyNongSan\bin\roslyn\csc.exe
+C:\Users\ngocp\OneDrive\Desktop\Jobs Freelance\QLNS\QuanLyNongSan\QuanLyNongSan\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\ngocp\OneDrive\Desktop\Jobs Freelance\QLNS\QuanLyNongSan\QuanLyNongSan\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\ngocp\OneDrive\Desktop\Jobs Freelance\QLNS\QuanLyNongSan\QuanLyNongSan\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\ngocp\OneDrive\Desktop\Jobs Freelance\QLNS\QuanLyNongSan\QuanLyNongSan\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\ngocp\OneDrive\Desktop\Jobs Freelance\QLNS\QuanLyNongSan\QuanLyNongSan\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\ngocp\OneDrive\Desktop\Jobs Freelance\QLNS\QuanLyNongSan\QuanLyNongSan\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\ngocp\OneDrive\Desktop\Jobs Freelance\QLNS\QuanLyNongSan\QuanLyNongSan\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\ngocp\OneDrive\Desktop\Jobs Freelance\QLNS\QuanLyNongSan\QuanLyNongSan\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\ngocp\OneDrive\Desktop\Jobs Freelance\QLNS\QuanLyNongSan\QuanLyNongSan\bin\roslyn\vbc.exe
+C:\Users\ngocp\OneDrive\Desktop\Jobs Freelance\QLNS\QuanLyNongSan\QuanLyNongSan\bin\roslyn\VBCSCompiler.exe
+C:\Users\ngocp\OneDrive\Desktop\Jobs Freelance\QLNS\QuanLyNongSan\QuanLyNongSan\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\ngocp\OneDrive\Desktop\Jobs Freelance\QLNS\QuanLyNongSan\QuanLyNongSan\bin\QuanLyNongSan.dll.config
+C:\Users\ngocp\OneDrive\Desktop\Jobs Freelance\QLNS\QuanLyNongSan\QuanLyNongSan\bin\QuanLyNongSan.dll
+C:\Users\ngocp\OneDrive\Desktop\Jobs Freelance\QLNS\QuanLyNongSan\QuanLyNongSan\bin\QuanLyNongSan.pdb
+C:\Users\ngocp\OneDrive\Desktop\Jobs Freelance\QLNS\QuanLyNongSan\QuanLyNongSan\bin\Antlr3.Runtime.dll
+C:\Users\ngocp\OneDrive\Desktop\Jobs Freelance\QLNS\QuanLyNongSan\QuanLyNongSan\bin\dotNetRDF.dll
+C:\Users\ngocp\OneDrive\Desktop\Jobs Freelance\QLNS\QuanLyNongSan\QuanLyNongSan\bin\EntityFramework.dll
+C:\Users\ngocp\OneDrive\Desktop\Jobs Freelance\QLNS\QuanLyNongSan\QuanLyNongSan\bin\EntityFramework.SqlServer.dll
+C:\Users\ngocp\OneDrive\Desktop\Jobs Freelance\QLNS\QuanLyNongSan\QuanLyNongSan\bin\HtmlAgilityPack.dll
+C:\Users\ngocp\OneDrive\Desktop\Jobs Freelance\QLNS\QuanLyNongSan\QuanLyNongSan\bin\Microsoft.AI.Agent.Intercept.dll
+C:\Users\ngocp\OneDrive\Desktop\Jobs Freelance\QLNS\QuanLyNongSan\QuanLyNongSan\bin\Microsoft.AI.DependencyCollector.dll
+C:\Users\ngocp\OneDrive\Desktop\Jobs Freelance\QLNS\QuanLyNongSan\QuanLyNongSan\bin\Microsoft.AI.PerfCounterCollector.dll
+C:\Users\ngocp\OneDrive\Desktop\Jobs Freelance\QLNS\QuanLyNongSan\QuanLyNongSan\bin\Microsoft.AI.ServerTelemetryChannel.dll
+C:\Users\ngocp\OneDrive\Desktop\Jobs Freelance\QLNS\QuanLyNongSan\QuanLyNongSan\bin\Microsoft.AI.Web.dll
+C:\Users\ngocp\OneDrive\Desktop\Jobs Freelance\QLNS\QuanLyNongSan\QuanLyNongSan\bin\Microsoft.AI.WindowsServer.dll
+C:\Users\ngocp\OneDrive\Desktop\Jobs Freelance\QLNS\QuanLyNongSan\QuanLyNongSan\bin\Microsoft.ApplicationInsights.dll
+C:\Users\ngocp\OneDrive\Desktop\Jobs Freelance\QLNS\QuanLyNongSan\QuanLyNongSan\bin\Microsoft.AspNet.Identity.Core.dll
+C:\Users\ngocp\OneDrive\Desktop\Jobs Freelance\QLNS\QuanLyNongSan\QuanLyNongSan\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\Users\ngocp\OneDrive\Desktop\Jobs Freelance\QLNS\QuanLyNongSan\QuanLyNongSan\bin\Microsoft.AspNet.Identity.Owin.dll
+C:\Users\ngocp\OneDrive\Desktop\Jobs Freelance\QLNS\QuanLyNongSan\QuanLyNongSan\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\ngocp\OneDrive\Desktop\Jobs Freelance\QLNS\QuanLyNongSan\QuanLyNongSan\bin\Microsoft.Graph.Core.dll
+C:\Users\ngocp\OneDrive\Desktop\Jobs Freelance\QLNS\QuanLyNongSan\QuanLyNongSan\bin\Microsoft.Graph.dll
+C:\Users\ngocp\OneDrive\Desktop\Jobs Freelance\QLNS\QuanLyNongSan\QuanLyNongSan\bin\Microsoft.Owin.dll
+C:\Users\ngocp\OneDrive\Desktop\Jobs Freelance\QLNS\QuanLyNongSan\QuanLyNongSan\bin\Microsoft.Owin.Host.SystemWeb.dll
+C:\Users\ngocp\OneDrive\Desktop\Jobs Freelance\QLNS\QuanLyNongSan\QuanLyNongSan\bin\Microsoft.Owin.Security.Cookies.dll
+C:\Users\ngocp\OneDrive\Desktop\Jobs Freelance\QLNS\QuanLyNongSan\QuanLyNongSan\bin\Microsoft.Owin.Security.dll
+C:\Users\ngocp\OneDrive\Desktop\Jobs Freelance\QLNS\QuanLyNongSan\QuanLyNongSan\bin\Microsoft.Owin.Security.Facebook.dll
+C:\Users\ngocp\OneDrive\Desktop\Jobs Freelance\QLNS\QuanLyNongSan\QuanLyNongSan\bin\Microsoft.Owin.Security.Google.dll
+C:\Users\ngocp\OneDrive\Desktop\Jobs Freelance\QLNS\QuanLyNongSan\QuanLyNongSan\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+C:\Users\ngocp\OneDrive\Desktop\Jobs Freelance\QLNS\QuanLyNongSan\QuanLyNongSan\bin\Microsoft.Owin.Security.OAuth.dll
+C:\Users\ngocp\OneDrive\Desktop\Jobs Freelance\QLNS\QuanLyNongSan\QuanLyNongSan\bin\Microsoft.Owin.Security.Twitter.dll
+C:\Users\ngocp\OneDrive\Desktop\Jobs Freelance\QLNS\QuanLyNongSan\QuanLyNongSan\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\ngocp\OneDrive\Desktop\Jobs Freelance\QLNS\QuanLyNongSan\QuanLyNongSan\bin\Newtonsoft.Json.dll
+C:\Users\ngocp\OneDrive\Desktop\Jobs Freelance\QLNS\QuanLyNongSan\QuanLyNongSan\bin\Owin.dll
+C:\Users\ngocp\OneDrive\Desktop\Jobs Freelance\QLNS\QuanLyNongSan\QuanLyNongSan\bin\System.Buffers.dll
+C:\Users\ngocp\OneDrive\Desktop\Jobs Freelance\QLNS\QuanLyNongSan\QuanLyNongSan\bin\System.Diagnostics.DiagnosticSource.dll
+C:\Users\ngocp\OneDrive\Desktop\Jobs Freelance\QLNS\QuanLyNongSan\QuanLyNongSan\bin\System.Memory.dll
+C:\Users\ngocp\OneDrive\Desktop\Jobs Freelance\QLNS\QuanLyNongSan\QuanLyNongSan\bin\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\ngocp\OneDrive\Desktop\Jobs Freelance\QLNS\QuanLyNongSan\QuanLyNongSan\bin\System.ValueTuple.dll
+C:\Users\ngocp\OneDrive\Desktop\Jobs Freelance\QLNS\QuanLyNongSan\QuanLyNongSan\bin\System.Web.Helpers.dll
+C:\Users\ngocp\OneDrive\Desktop\Jobs Freelance\QLNS\QuanLyNongSan\QuanLyNongSan\bin\System.Web.Mvc.dll
+C:\Users\ngocp\OneDrive\Desktop\Jobs Freelance\QLNS\QuanLyNongSan\QuanLyNongSan\bin\System.Web.Optimization.dll
+C:\Users\ngocp\OneDrive\Desktop\Jobs Freelance\QLNS\QuanLyNongSan\QuanLyNongSan\bin\System.Web.Razor.dll
+C:\Users\ngocp\OneDrive\Desktop\Jobs Freelance\QLNS\QuanLyNongSan\QuanLyNongSan\bin\System.Web.WebPages.Deployment.dll
+C:\Users\ngocp\OneDrive\Desktop\Jobs Freelance\QLNS\QuanLyNongSan\QuanLyNongSan\bin\System.Web.WebPages.dll
+C:\Users\ngocp\OneDrive\Desktop\Jobs Freelance\QLNS\QuanLyNongSan\QuanLyNongSan\bin\System.Web.WebPages.Razor.dll
+C:\Users\ngocp\OneDrive\Desktop\Jobs Freelance\QLNS\QuanLyNongSan\QuanLyNongSan\bin\VDS.Common.dll
+C:\Users\ngocp\OneDrive\Desktop\Jobs Freelance\QLNS\QuanLyNongSan\QuanLyNongSan\bin\WebGrease.dll
+C:\Users\ngocp\OneDrive\Desktop\Jobs Freelance\QLNS\QuanLyNongSan\QuanLyNongSan\bin\dotNetRDF.xml
+C:\Users\ngocp\OneDrive\Desktop\Jobs Freelance\QLNS\QuanLyNongSan\QuanLyNongSan\bin\HtmlAgilityPack.pdb
+C:\Users\ngocp\OneDrive\Desktop\Jobs Freelance\QLNS\QuanLyNongSan\QuanLyNongSan\bin\HtmlAgilityPack.xml
+C:\Users\ngocp\OneDrive\Desktop\Jobs Freelance\QLNS\QuanLyNongSan\QuanLyNongSan\bin\Microsoft.AI.DependencyCollector.xml
+C:\Users\ngocp\OneDrive\Desktop\Jobs Freelance\QLNS\QuanLyNongSan\QuanLyNongSan\bin\Microsoft.AI.PerfCounterCollector.xml
+C:\Users\ngocp\OneDrive\Desktop\Jobs Freelance\QLNS\QuanLyNongSan\QuanLyNongSan\bin\Microsoft.AI.ServerTelemetryChannel.xml
+C:\Users\ngocp\OneDrive\Desktop\Jobs Freelance\QLNS\QuanLyNongSan\QuanLyNongSan\bin\Microsoft.AI.Web.xml
+C:\Users\ngocp\OneDrive\Desktop\Jobs Freelance\QLNS\QuanLyNongSan\QuanLyNongSan\bin\Microsoft.AI.WindowsServer.xml
+C:\Users\ngocp\OneDrive\Desktop\Jobs Freelance\QLNS\QuanLyNongSan\QuanLyNongSan\bin\Microsoft.ApplicationInsights.pdb
+C:\Users\ngocp\OneDrive\Desktop\Jobs Freelance\QLNS\QuanLyNongSan\QuanLyNongSan\bin\Microsoft.ApplicationInsights.xml
+C:\Users\ngocp\OneDrive\Desktop\Jobs Freelance\QLNS\QuanLyNongSan\QuanLyNongSan\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\ngocp\OneDrive\Desktop\Jobs Freelance\QLNS\QuanLyNongSan\QuanLyNongSan\bin\Microsoft.Graph.xml
+C:\Users\ngocp\OneDrive\Desktop\Jobs Freelance\QLNS\QuanLyNongSan\QuanLyNongSan\bin\Microsoft.Graph.Core.xml
+C:\Users\ngocp\OneDrive\Desktop\Jobs Freelance\QLNS\QuanLyNongSan\QuanLyNongSan\bin\Newtonsoft.Json.xml
+C:\Users\ngocp\OneDrive\Desktop\Jobs Freelance\QLNS\QuanLyNongSan\QuanLyNongSan\bin\System.Buffers.xml
+C:\Users\ngocp\OneDrive\Desktop\Jobs Freelance\QLNS\QuanLyNongSan\QuanLyNongSan\bin\System.Diagnostics.DiagnosticSource.xml
+C:\Users\ngocp\OneDrive\Desktop\Jobs Freelance\QLNS\QuanLyNongSan\QuanLyNongSan\bin\System.Memory.xml
+C:\Users\ngocp\OneDrive\Desktop\Jobs Freelance\QLNS\QuanLyNongSan\QuanLyNongSan\bin\System.Runtime.CompilerServices.Unsafe.xml
+C:\Users\ngocp\OneDrive\Desktop\Jobs Freelance\QLNS\QuanLyNongSan\QuanLyNongSan\bin\System.Web.Helpers.xml
+C:\Users\ngocp\OneDrive\Desktop\Jobs Freelance\QLNS\QuanLyNongSan\QuanLyNongSan\bin\System.Web.Mvc.xml
+C:\Users\ngocp\OneDrive\Desktop\Jobs Freelance\QLNS\QuanLyNongSan\QuanLyNongSan\bin\System.Web.Optimization.xml
+C:\Users\ngocp\OneDrive\Desktop\Jobs Freelance\QLNS\QuanLyNongSan\QuanLyNongSan\bin\System.Web.Razor.xml
+C:\Users\ngocp\OneDrive\Desktop\Jobs Freelance\QLNS\QuanLyNongSan\QuanLyNongSan\bin\System.Web.WebPages.xml
+C:\Users\ngocp\OneDrive\Desktop\Jobs Freelance\QLNS\QuanLyNongSan\QuanLyNongSan\bin\System.Web.WebPages.Deployment.xml
+C:\Users\ngocp\OneDrive\Desktop\Jobs Freelance\QLNS\QuanLyNongSan\QuanLyNongSan\bin\System.Web.WebPages.Razor.xml
+C:\Users\ngocp\OneDrive\Desktop\Jobs Freelance\QLNS\QuanLyNongSan\QuanLyNongSan\bin\VDS.Common.pdb
+C:\Users\ngocp\OneDrive\Desktop\Jobs Freelance\QLNS\QuanLyNongSan\QuanLyNongSan\bin\VDS.Common.xml
+C:\Users\ngocp\OneDrive\Desktop\Jobs Freelance\QLNS\QuanLyNongSan\QuanLyNongSan\bin\Antlr3.Runtime.pdb
+C:\Users\ngocp\OneDrive\Desktop\Jobs Freelance\QLNS\QuanLyNongSan\QuanLyNongSan\bin\EntityFramework.xml
+C:\Users\ngocp\OneDrive\Desktop\Jobs Freelance\QLNS\QuanLyNongSan\QuanLyNongSan\bin\EntityFramework.SqlServer.xml
+C:\Users\ngocp\OneDrive\Desktop\Jobs Freelance\QLNS\QuanLyNongSan\QuanLyNongSan\bin\Microsoft.AspNet.Identity.Core.xml
+C:\Users\ngocp\OneDrive\Desktop\Jobs Freelance\QLNS\QuanLyNongSan\QuanLyNongSan\bin\Microsoft.AspNet.Identity.Owin.xml
+C:\Users\ngocp\OneDrive\Desktop\Jobs Freelance\QLNS\QuanLyNongSan\QuanLyNongSan\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\Users\ngocp\OneDrive\Desktop\Jobs Freelance\QLNS\QuanLyNongSan\QuanLyNongSan\bin\Microsoft.Owin.xml
+C:\Users\ngocp\OneDrive\Desktop\Jobs Freelance\QLNS\QuanLyNongSan\QuanLyNongSan\bin\Microsoft.Owin.Host.SystemWeb.xml
+C:\Users\ngocp\OneDrive\Desktop\Jobs Freelance\QLNS\QuanLyNongSan\QuanLyNongSan\bin\Microsoft.Owin.Security.xml
+C:\Users\ngocp\OneDrive\Desktop\Jobs Freelance\QLNS\QuanLyNongSan\QuanLyNongSan\bin\Microsoft.Owin.Security.Facebook.xml
+C:\Users\ngocp\OneDrive\Desktop\Jobs Freelance\QLNS\QuanLyNongSan\QuanLyNongSan\bin\Microsoft.Owin.Security.Cookies.xml
+C:\Users\ngocp\OneDrive\Desktop\Jobs Freelance\QLNS\QuanLyNongSan\QuanLyNongSan\bin\Microsoft.Owin.Security.OAuth.xml
+C:\Users\ngocp\OneDrive\Desktop\Jobs Freelance\QLNS\QuanLyNongSan\QuanLyNongSan\bin\Microsoft.Owin.Security.Google.xml
+C:\Users\ngocp\OneDrive\Desktop\Jobs Freelance\QLNS\QuanLyNongSan\QuanLyNongSan\bin\Microsoft.Owin.Security.Twitter.xml
+C:\Users\ngocp\OneDrive\Desktop\Jobs Freelance\QLNS\QuanLyNongSan\QuanLyNongSan\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+C:\Users\ngocp\OneDrive\Desktop\Jobs Freelance\QLNS\QuanLyNongSan\QuanLyNongSan\obj\Release\QuanLyNongSan.csprojResolveAssemblyReference.cache
+C:\Users\ngocp\OneDrive\Desktop\Jobs Freelance\QLNS\QuanLyNongSan\QuanLyNongSan\obj\Release\QuanLyNongSan.dll
+C:\Users\ngocp\OneDrive\Desktop\Jobs Freelance\QLNS\QuanLyNongSan\QuanLyNongSan\obj\Release\QuanLyNongSan.pdb
